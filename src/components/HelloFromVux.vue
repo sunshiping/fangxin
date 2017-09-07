@@ -5,7 +5,7 @@
       <h1></h1>
     </div>
     <group title="cell demo">
-      <cell title="VUX" value="cool" :link="{path: '/test'}"></cell>
+      <cell title="VUX" value="cool" :link="{path: '/hello'}"></cell>
     </group>
   </div>
 </template>
