@@ -4,13 +4,13 @@
             <img class="login" src="/static/login/logo.png" alt="login">
         </div>
         <group>
-            <x-input title="账号:" name="mobile" placeholder="请输入手机号" keyboard="number" is-type="china-mobile"></x-input>
+            <x-input title="账号:" name="mobile" placeholder="请输入手机号" keyboard="number" is-type="china-mobile" placeholder-align="right"></x-input>
         </group>
         <group>
             <!--<x-input title="密码" type="password" placeholder="必填" v-model="value4"></x-input>-->
-            <x-input title="密码:" type="password" placeholder="请输入密码"></x-input>
+            <x-input title="密码:" type="password" placeholder="请输入密码" placeholder-align="right"></x-input>
         </group>
-        <div class="btn-box" style="padding: 0 20px;">
+        <div class="btn-box">
             <group>
                 <x-button :text="text" @click.native="save" type="primary"></x-button>
                 <!--<x-button type="primary">登陆</x-button>-->
@@ -38,7 +38,7 @@
     data () {
       return {
         loadingShow: false,
-        text: '登录'
+        text: '登陆'
       }
     },
     methods: {
@@ -56,14 +56,15 @@
 <style scoped>
     .login .login-box{
         padding-top: 50px;
+        padding-bottom: 16px;
         text-align: center;
     }
     .login .login-box .login{
-       width: 80px;
-        height: 80px;
+       width: 90px;
+        height: 90px;
     }
     .login .btn-box{
-        padding: 0 20px;
+        padding: 10px 20px 0 20px;
     }
     .red {
         color: red;
