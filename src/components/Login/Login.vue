@@ -12,7 +12,7 @@
         </group>
         <div class="btn-box" style="padding: 0 20px;">
             <group>
-                <x-button :text="text" :disabled="isActive" @click.native="save" type="primary"></x-button>
+                <x-button :text="text" @click.native="save" type="primary"></x-button>
                 <!--<x-button type="primary">登陆</x-button>-->
             </group>
             <divider>忘记密码？</divider>
@@ -21,10 +21,14 @@
 </template>
 
 <script>
-  import { XInput, Group, XButton, Cell, Divider } from 'vux'
+  import { Loading, XInput, Group, XButton, Cell, Divider, TransferDomDirective as TransferDom } from 'vux'
 
   export default {
+    directives: {
+      TransferDom
+    },
     components: {
+      Loading,
       XInput,
       XButton,
       Group,
@@ -33,14 +37,18 @@
     },
     data () {
       return {
-        text: '登录',
-        isActive: false
+        loadingShow: false,
+        text: '登录'
       }
     },
     methods: {
       save () {
-        this.text = '登陆中...'
-        this.isActive = true
+        this.$vux.loading.show({
+          text: '登陆中...'
+        })
+        setTimeout(() => {
+          this.$vux.loading.hide()
+        }, 2000)
       }
     }
   }
