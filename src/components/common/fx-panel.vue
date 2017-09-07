@@ -1,37 +1,44 @@
 <template>
-    <div class="fx-pan">
-        <flexbox>
-            <flexbox-item><div class="house-title">龙腾西城  3室2厅 89.61㎡ 龙腾西城</div></flexbox-item>
-            <flexbox-item>
-                <div class="fr pdr10">
-                    <fx-rater v-model="starCount" slot="value" active-color="#04BE02" :font-size="15">
-                        <span class="score" slot="score" >4.8分</span>
-                    </fx-rater>
+    <div>
+        <div class="fx-pan" v-for="item in houseList">
+            <flexbox>
+                <flexbox-item><div class="house-title">{{ item.name }}</div></flexbox-item>
+                <flexbox-item>
+                    <div class="fr pdr10">
+                        <fx-rater v-model="item.stars" slot="value" active-color="#04BE02" :font-size="15">
+                            <span class="score" slot="score" >{{ item.score }}分</span>
+                        </fx-rater>
+                    </div>
+                </flexbox-item>
+
+            </flexbox>
+            <div class="desc"><p class="house-desc inline-div" v-for="desc in item.desc"><span>{{desc}}</span> <span class="slash">/ </span> </p></div>
+            <span class="house-price">{{ item.price }}万</span><span class="house-unit-price">{{ item.unitPrice }}元/平</span>
+
+            <scroller lock-y :scrollbar-x=false class="mgt10">
+                <div class="box1">
+                    <div class="box1-item" v-for="i in 7"><span>{{' ' + i + ' '}}</span></div>
                 </div>
-            </flexbox-item>
+            </scroller>
 
-        </flexbox>
-        <p class="house-desc"><span>南北通透</span> / <span>高层(共30层)</span> / <span>2014</span></span></p>
-        <span class="house-price">240万</span><span class="house-unit-price">15600元/平</span>
+            <flexbox :gutter="0" class="mgt10">
+                <flexbox-item :span="3/4">
+                    <div class="flex-demo">
+                        <p v-for="tag in item.tags" class="inline-div">
+                            <span class="house-tag">{{tag}}</span>
+                        </p>
 
-        <scroller lock-y :scrollbar-x=false>
-            <div class="box1">
-                <div class="box1-item" v-for="i in 7"><span>{{' ' + i + ' '}}</span></div>
-            </div>
-        </scroller>
+                    </div>
+                </flexbox-item>
+                <flexbox-item><div class="see-count">带看：{{ item.seeCount }}次</div></flexbox-item>
+            </flexbox>
 
-        <flexbox :gutter="0" class="mgt20">
-            <flexbox-item :span="3/4">
-                <div class="flex-demo">
-                    <span class="house-tag">学区房</span><span class="house-tag">地铁房</span>
-                </div>
-            </flexbox-item>
-            <flexbox-item><div class="flex-demo">rest</div></flexbox-item>
-        </flexbox>
+            <div class="divide-line"></div>
 
 
-
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -48,16 +55,21 @@
         FxRater,
         Scroller
       },
-      data () {
-        return {
-          msg: '123',
-          starCount: 3.5
-        }
+      props: {
+        houseList: Array
       }
     }
 </script>
 
 <style scoped="scoped">
+    .divide-line{
+        /*border-bottom: 1px solid #eee;*/
+        /*padding-top: 15px;*/
+        border: 0;
+        height: 0;
+        border-top: 1px solid #eee;
+        margin: 15px 0;
+    }
     .fx-pan{
         padding: 10px;
     }
@@ -79,6 +91,13 @@
     .house-desc{
         font-size: 12px;
         color: #999;
+
+    }
+    .inline-div{
+        display: inline;
+    }
+    .desc .house-desc:last-child .slash{
+        display: none;
     }
     .house-price{
         font-size: 16px;
@@ -109,13 +128,19 @@
     }
     .house-tag{
         display: inline-block;
-        padding: 3px;
+        padding: 2px 5px;
         background-color: #ccc;
         color: #666;
         font-size: 12px;
         margin-right: 5px;
     }
-    .mgt20{
-        margin-top: 20px;
+    .mgt10{
+        margin-top: 10px;
+    }
+    .see-count{
+        font-size: 12px;
+        color: #999;
+        text-align: right;
+        padding-right: 10px;
     }
 </style>

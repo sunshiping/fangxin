@@ -7,7 +7,7 @@ export default [{
   component: Source
 },
 {
-  path: '/Login',
+  path: '/test',
   name: 'test',
   component: Test
 }]
