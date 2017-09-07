@@ -21,6 +21,7 @@
     },
     data () {
       return {
+        type: '1',
         text: '预约时间：2016年6月15日 15:30',
         list: [{
           src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
