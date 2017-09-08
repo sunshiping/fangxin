@@ -1,18 +1,24 @@
 <template>
     <div>
-        <scroller lock-x :scrollbar-y=true>
-            <fx-panel :houseList="houseList"></fx-panel>
-        </scroller>
+       <list-view>
+           <div slot="list">
+               <fx-panel :houseList="houseList"></fx-panel>
+           </div>
+       </list-view>
     </div>
 </template>
 
+
+
+
 <script>
-    import { Scroller } from 'vux'
     import FxPanel from './common/fx-panel.vue'
+    import ListView from './common/ListView.vue'
+
     export default {
       components: {
         FxPanel,
-        Scroller
+        ListView
       },
       data () {
         return {
@@ -81,4 +87,5 @@
         }
       }
     }
+
 </script>
