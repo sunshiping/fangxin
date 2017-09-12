@@ -16,4 +16,7 @@ export default {
 body {
   background-color: #fbf9fe;
 }
+.vux-popup-mask{
+  top:100px !important;
+}
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+       <search-title></search-title>
        <list-view>
            <div slot="list">
                <fx-panel :houseList="houseList"></fx-panel>
@@ -14,11 +15,13 @@
 <script>
     import FxPanel from './common/fx-panel.vue'
     import ListView from './common/ListView.vue'
+    import SearchTitle from './common/ListHeader.vue'
 
     export default {
       components: {
         FxPanel,
-        ListView
+        ListView,
+        SearchTitle
       },
       data () {
         return {
