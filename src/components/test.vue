@@ -1,15 +1,21 @@
 <template>
     <div>
-        <h1>{{ msg }}</h1>
+        <panelcomp></panelcomp>
     </div>
 </template>
 
 <script>
+  import Panelcomp from './common/PanelComp.vue'
   export default {
     name: 'hello',
+    components: {
+      Panelcomp
+    },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        commonList: ['China', 'Japan', 'America'],
+        checklist003: ['China', 'Japan']
       }
     }
   }
