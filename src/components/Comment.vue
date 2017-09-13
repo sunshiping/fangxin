@@ -7,13 +7,14 @@
         <!--<group title="cell demo">-->
             <!--<cell title="VUX" value="cool" is-link></cell>-->
         <!--</group>-->
-        <panel header="类型：带看" :text="text" :footer="footer" :list="list" :type="type">
+        <panel :header="header" :list="list">
         </panel>
     </div>
 </template>
 
 <script>
-  import { Panel } from 'vux'
+//  import { Panel } from 'vux'
+  import Panel from './fxcomponents/zj-comment.vue'
 
   export default {
     components: {
@@ -21,30 +22,19 @@
     },
     data () {
       return {
-        text: '预约时间：2016年6月15日 15:30',
+        header: [{
+          type: '类型：带看',
+          data: '预约时间：2017年9月13日 13:20'
+        }],
         list: [{
           src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-          title: '标题一',
-          desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-          url: '/component/cell'
-        }, {
-          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-          title: '标题二',
-          desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-          url: {
-            path: '/component/radio',
-            replace: false
-          },
-          meta: {
-            source: '来源信息',
-            date: '时间',
-            other: '其他信息'
-          }
-        }],
-        footer: {
-          title: '查看更多',
-          url: 'http://vux.li'
-        }
+          name: '梨园别墅',
+          mess: '3室一厅·5/18层',
+          price: '3000元/月',
+          address: '心怡路与祥盛街交叉口东100米',
+          desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。'
+//          url: '/component/cell'
+        }]
       }
     }
   }
