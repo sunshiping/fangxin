@@ -15,13 +15,13 @@
           houseList: [
             {
               name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
-              price: '240',
               unitPrice: '15000',
               desc: ['南北通透', '高层(共30层)', '2014'],
               tags: ['学区房', '地铁房'],
               seeCount: 20,
               stars: 3.5,
-              score: 4.8
+              score: 4.8,
+              price: '240'
             },
             {
               name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
