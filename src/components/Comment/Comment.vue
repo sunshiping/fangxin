@@ -14,7 +14,7 @@
 
 <script>
 //  import { Panel } from 'vux'
-  import Panel from './fxcomponents/zj-comment.vue'
+  import Panel from './CommentComp.vue'
 
   export default {
     components: {
