@@ -44,42 +44,23 @@
 
 
         </div>
+
     </div>
 </template>
 
 <script>
   import RaterComp from '../Common/RaterComp.vue'
-
   export default {
-    name: 'hello',
     components: {
       RaterComp
     },
+    props: {
+      list: Array
+    },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
         currentCheckList: [],
-        disabledCheck: false,
-        stars: 4.5,
-        list: [{
-          id: 1001,
-          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-          title: '标题一',
-          name: '门店：21世纪房产-心怡路店',
-          desc: '成交140套 | 独家委托11套 | 带看6次',
-          star: 4.5,
-          score: 4.5,
-          url: '/component/cell'
-        }, {
-          id: 1002,
-          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-          title: '标题一',
-          name: '门店：21世纪房产-黄河南路店',
-          desc: '成交100套 | 独家委托12套 | 带看5次',
-          star: 4.9,
-          score: 4.9,
-          url: '/component/cell'
-        }]
+        disabledCheck: false
       }
     },
     watch: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fx-pan" v-for="item in houseList">
+        <div class="fx-pan" v-for="item in list">
             <flexbox>
                 <flexbox-item><div class="house-title">{{ item.name }}</div></flexbox-item>
                 <flexbox-item>
@@ -56,7 +56,7 @@
         Scroller
       },
       props: {
-        houseList: Array
+        list: Array
       }
     }
 </script>

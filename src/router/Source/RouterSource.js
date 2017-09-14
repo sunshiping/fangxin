@@ -1,15 +1,9 @@
-import SourceTest from '../../components/Source/SourceTest.vue'
 import SourceList from '../../components/Source/SourceList.vue'
-import Test from '../../components/Test.vue'
 import SourceInfo from '../../components/Source/SourceInfo.vue'
-import PersonalInfo from '../../components/Personal/PersonalInfo.vue'
+import SourceTest from '../../components/Source/SourceTest.vue'
+import Test from '../../components/Test.vue'
 
 export default [{
-  path: '/sourceTest',
-  name: '房源列表筛选弹框测试',
-  component: SourceTest
-},
-{
   path: '/sourceList',
   name: 'sourceList',
   component: SourceList
@@ -20,12 +14,12 @@ export default [{
   component: SourceInfo
 },
 {
-  path: '/personalInfo',
-  name: 'PersonalInfo',
-  component: PersonalInfo
+  path: '/sourceTest',
+  name: '房源列表筛选弹框测试',
+  component: SourceTest
 },
 {
   path: '/test',
-  name: 'test',
+  name: '测试',
   component: Test
 }]

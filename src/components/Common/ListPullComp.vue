@@ -5,7 +5,7 @@
             scrollbar-y
             use-pullup
             use-pulldown
-            height=""
+            :height="viewHeight"
             @on-pullup-loading="loadMore"
             @on-pulldown-loading="refresh"
             v-model="status"
@@ -37,6 +37,9 @@
     components: {
       Scroller,
       Spinner
+    },
+    props: {
+      viewHeight: String
     },
     data () {
       return {
