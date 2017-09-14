@@ -1,11 +1,11 @@
 <template>
     <div>
-       <search-title></search-title>
-       <list-view>
+       <filter-tab-comp></filter-tab-comp>
+       <list-pull-comp>
            <div slot="list">
-               <fx-panel :houseList="houseList"></fx-panel>
+               <panel-comp :houseList="houseList"></panel-comp>
            </div>
-       </list-view>
+       </list-pull-comp>
     </div>
 </template>
 
@@ -13,15 +13,15 @@
 
 
 <script>
-    import FxPanel from './common/fx-panel.vue'
-    import ListView from './common/ListView.vue'
-    import SearchTitle from './common/ListHeader.vue'
+    import PanelComp from '../Common/PanelComp.vue'
+    import ListPullComp from '../Common/ListPullComp.vue'
+    import FilterTabComp from './FilterTabComp.vue'
 
     export default {
       components: {
-        FxPanel,
-        ListView,
-        SearchTitle
+        PanelComp,
+        ListPullComp,
+        FilterTabComp
       },
       data () {
         return {

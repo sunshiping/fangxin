@@ -5,9 +5,9 @@
             <flexbox :gutter="0">
                 <flexbox-item>
                     <div class="stars font-lf">
-                        <fx-rater v-model="stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
+                        <rater-comp v-model="stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
                             <span class="score" slot="score" >4.9</span>
-                        </fx-rater>
+                        </rater-comp>
                         <div>房源评价 5人</div>
                     </div>
                 </flexbox-item>
@@ -70,7 +70,7 @@
 
 <script>
   import { Swiper, Flexbox, FlexboxItem } from 'vux'
-  import FxRater from './common/fx-rater.vue'
+  import RaterComp from '../Common/RaterComp.vue'
 
   export default {
     name: 'hello',
@@ -78,7 +78,7 @@
       Swiper,
       Flexbox,
       FlexboxItem,
-      FxRater
+      RaterComp
     },
     data () {
       return {
