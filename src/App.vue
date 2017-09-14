@@ -59,4 +59,10 @@ body {
     font-size: 12px;
   }
 }
+  .line-1{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
 </style>
