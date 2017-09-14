@@ -1,15 +1,15 @@
 <template>
     <div>
-        <panelcomp></panelcomp>
+        <panel-checkbox-comp></panel-checkbox-comp>
     </div>
 </template>
 
 <script>
-  import Panelcomp from './Entrust/PanelCheckboxComp.vue'
+  import PanelCheckboxComp from './PanelCheckboxComp.vue'
   export default {
     name: 'hello',
     components: {
-      Panelcomp
+      PanelCheckboxComp
     },
     data () {
       return {
