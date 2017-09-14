@@ -5,9 +5,9 @@
                 <flexbox-item><div class="house-title">{{ item.name }}</div></flexbox-item>
                 <flexbox-item>
                     <div class="fr pdr10">
-                        <fx-rater v-model="item.stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
+                        <rater-comp v-model="item.stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
                             <span class="score" slot="score" >{{ item.score }}分</span>
-                        </fx-rater>
+                        </rater-comp>
                     </div>
                 </flexbox-item>
 
@@ -43,7 +43,7 @@
 
 <script>
     import { Flexbox, FlexboxItem, Rater, Group, Cell, Scroller } from 'vux'
-    import FxRater from './fx-rater.vue'
+    import RaterComp from './RaterComp.vue'
 
     export default {
       components: {
@@ -52,7 +52,7 @@
         Rater,
         Group,
         Cell,
-        FxRater,
+        RaterComp,
         Scroller
       },
       props: {
