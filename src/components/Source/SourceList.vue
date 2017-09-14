@@ -1,9 +1,9 @@
 <template>
     <div>
        <filter-tab-comp></filter-tab-comp>
-       <list-pull-comp>
+       <list-pull-comp :viewHeight="viewHeight">
            <div slot="list">
-               <panel-comp :houseList="houseList"></panel-comp>
+               <panel-comp :list="list"></panel-comp>
            </div>
        </list-pull-comp>
     </div>
@@ -25,7 +25,8 @@
       },
       data () {
         return {
-          houseList: [
+          viewHeight: '-50',
+          list: [
             {
               name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
               price: '240',
