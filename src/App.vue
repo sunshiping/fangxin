@@ -14,7 +14,9 @@ export default {
 @import '~vux/src/styles/reset.less';
 @import '../static/css/weui.min.css';
 @import '../static/css/style.less';
-body {
-  background-color: #fbf9fe;
-}
+/*body {*/
+  /*background-color: #fbf9fe;*/
+  /*padding: 0 !important;*/
+/*}*/
+
 </style>

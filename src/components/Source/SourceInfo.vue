@@ -26,43 +26,53 @@
             </flexbox>
             <div class="divide-line"></div>
         </div>
-        <div class="house-info">
-            <flexbox :gutter="0" wrap="wrap" :class="{ isFold: isFold }">
-                <flexbox-item :span="1/2" v-for="item in houseInfo" :key="item.label">
-                    <div class="info-item">
-                        <label>{{ item.label }}</label>
-                        <span>{{ item.info }}</span>
-                    </div>
-                </flexbox-item>
-            </flexbox>
-            <div class="fold"  @click="fold"><span class="arrow-icon"></span></div>
 
-            <div class="divide-line"></div>
-        </div>
-
-        <div class="position">
-            <div class="position-title">小区位置</div>
-            <div class="position-map">123</div>
-        </div>
-
-        <div class="operation-btn">
-            <div class="btns">
-                <flexbox :gutter="0">
-                    <flexbox-item :span="1/5">
-                        <div class="collection">
-                            收藏
+        <div class="info">
+            <div class="house-info">
+                <flexbox :gutter="0" wrap="wrap" :class="{ isFold: isFold }">
+                    <flexbox-item :span="1/2" v-for="item in houseInfo" :key="item.label">
+                        <div class="info-item">
+                            <label>{{ item.label }}</label>
+                            <span>{{ item.info }}</span>
                         </div>
                     </flexbox-item>
-                    <flexbox-item :span="2/5">
-                        <div class="btn">预约看房</div>
-                    </flexbox-item>
-                    <flexbox-item :span="2/5">
-                        <div class="btn">联系经纪人</div>
-                    </flexbox-item>
                 </flexbox>
+                <div class="fold"  @click="fold"><span class="arrow-icon" :class="{ change : !isFold }"></span></div>
+
+                <div class="divide-line"></div>
             </div>
 
+            <div class="position">
+                <div class="position-title">小区位置</div>
+                <div class="position-map">
+                    <baidu-map :position="position"></baidu-map>
+                </div>
+            </div>
+
+            <div class="divide-line"></div>
+
+            <col2-comp :list="list"></col2-comp>
+
+            <div class="operation-btn">
+                <div class="btns">
+                    <flexbox :gutter="0">
+                        <flexbox-item :span="1/5">
+                            <div class="collection">
+                                收藏
+                            </div>
+                        </flexbox-item>
+                        <flexbox-item :span="2/5">
+                            <div class="btn">预约看房</div>
+                        </flexbox-item>
+                        <flexbox-item :span="2/5">
+                            <div class="btn">联系经纪人</div>
+                        </flexbox-item>
+                    </flexbox>
+                </div>
+
+            </div>
         </div>
+
 
 
     </div>
@@ -71,6 +81,8 @@
 <script>
   import { Swiper, Flexbox, FlexboxItem } from 'vux'
   import RaterComp from '../Common/RaterComp.vue'
+  import BaiduMap from '../Comment/MapComp.vue'
+  import Col2Comp from '../Common/Col2Comp.vue'
 
   export default {
     name: 'hello',
@@ -78,7 +90,9 @@
       Swiper,
       Flexbox,
       FlexboxItem,
-      RaterComp
+      RaterComp,
+      BaiduMap,
+      Col2Comp
     },
     data () {
       return {
@@ -131,7 +145,38 @@
             info: '精装修'
           }
         ],
-        isFold: true
+        isFold: true,
+        position: '九龙城-龙腾西城',
+        list: [
+          {
+            src: '../../static/login/logo.png',
+            name: '蔷薇花园 3室2厅 112㎡',
+            price: '240',
+            unitPrice: '15000',
+            measure: '112㎡'
+          },
+          {
+            src: '../../static/login/logo.png',
+            name: '蔷薇花园1 3室2厅 112㎡',
+            price: '240',
+            unitPrice: '15000',
+            measure: '112㎡'
+          },
+          {
+            src: '../../static/login/logo.png',
+            name: '蔷薇花园2 3室2厅 112㎡',
+            price: '240',
+            unitPrice: '15000',
+            measure: '112㎡'
+          },
+          {
+            src: '../../static/login/logo.png',
+            name: '蔷薇花园3 3室2厅 112㎡',
+            price: '240',
+            unitPrice: '15000',
+            measure: '112㎡'
+          }
+        ]
       }
     },
     methods: {
@@ -177,9 +222,11 @@
     .house-desc{
         padding: 5px;
     }
+    .info{
+        background-color: #fff;
+    }
     .house-info{
         padding: 5px 10px;
-        background-color: #fff;
     }
     .info-item{
         label{
@@ -220,6 +267,9 @@
         margin-top: -4px;
         right: 2px;
     }
+    .change:after{
+        -webkit-transform: rotate(-43deg);
+    }
     .isFold{
         height:50px;
         overflow: hidden;
@@ -227,6 +277,7 @@
     .position{
         padding: 0 10px;
         background-color: #fff;
+        height: 240px;
     }
     .position-title{
         color: #999;
