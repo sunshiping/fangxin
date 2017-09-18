@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fx-pan" v-for="item in list">
+        <div class="fx-pan" v-for="item in list" :key="item.id">
             <flexbox>
                 <flexbox-item><div class="house-title">{{ item.name }}</div></flexbox-item>
                 <flexbox-item>

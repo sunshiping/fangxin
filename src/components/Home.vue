@@ -1,6 +1,12 @@
 <template>
-    <div id='app'>
-        <div class='choice' @click='choiceCity()'>{{youChoiceCityName}}</div>
+    <div class="home">
+        <div class="search-header clearfix">
+            <div class="city-name fl" @click='choiceCity()'><span>{{youChoiceCityName}}</span><span class="arrow-icon"></span></div>
+            <div class="fr search-input">
+                <input type="search" value="" placeholder="搜索" @focus="onFocus" @blur="onBlur"/>
+                <i class="weui-icon-search"></i>
+            </div>
+        </div>
         <city
                 :is-show.sync='city.isShow'
                 :on-choose='city.onChoose'
@@ -9,29 +15,143 @@
                 :star-city='city.starCity'
                 :close='close'
         ></city>
+
+        <grid :rows="3" :cols="2" class="grid-pd">
+            <grid-item :label="item.label" v-for="item in gridList" :key="item.id">
+                <img slot="icon" :src="item.src">
+            </grid-item>
+        </grid>
+
+        <div class="recommend">
+           <span class="recommend-title">推荐房源</span>
+        </div>
+        <panel-comp :list="list"></panel-comp>
+
+
+
+
     </div>
 </template>
 
 <script>
+  import { Search, Grid, GridItem } from 'vux'
   import city from 'vue-city'
-  // import city from '../lib/components/index.js';
-  // import * as defed from 'defed-vue-components'
+  import PanelComp from './Common/PanelComp.vue'
 
   export default {
+    components: {
+      Search,
+      city,
+      Grid,
+      GridItem,
+      PanelComp
+    },
     data () {
       return {
-        youChoiceCityName: '请选择城市...',
+        isFocus: false,
+        youChoiceCityName: '郑州',
         city: {
           isShow: false,
           cityData: [],
           onChoose: null,
           localCity: {},
           starCity: []
-        }
+        },
+        gridList: [
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '二手房'
+          },
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '租房'
+          },
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '地图找房'
+          },
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '登记房源'
+          },
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '委托找房'
+          },
+          {
+            id: '100001',
+            src: '../../static/login/logo.png',
+            label: '个人中心'
+          }
+        ],
+        list: [
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共30层)', '2014'],
+            tags: ['学区房', '地铁房'],
+            seeCount: 20,
+            stars: 3.5,
+            score: 4.8
+          },
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共20层)', '2015'],
+            tags: ['学区房1', '地铁房1'],
+            seeCount: 23,
+            stars: 4.5,
+            score: 4.9
+          },
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共30层)', '2014'],
+            tags: ['学区房', '地铁房'],
+            seeCount: 20,
+            stars: 3.5,
+            score: 4.8
+          },
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共20层)', '2015'],
+            tags: ['学区房1', '地铁房1'],
+            seeCount: 23,
+            stars: 4.5,
+            score: 4.9
+          },
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共30层)', '2014'],
+            tags: ['学区房', '地铁房'],
+            seeCount: 20,
+            stars: 3.5,
+            score: 4.8
+          },
+          {
+            name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
+            price: '240',
+            unitPrice: '15000',
+            desc: ['南北通透', '高层(共20层)', '2015'],
+            tags: ['学区房1', '地铁房1'],
+            seeCount: 23,
+            stars: 4.5,
+            score: 4.9
+          }
+        ]
       }
-    },
-    components: {
-      city
     },
     mounted () {
       this.$nextTick(function () {
@@ -43,7 +163,7 @@
           // ToDo: 选完城市后......
           console.log(res)
           _this.city.isShow = false
-          _this.youChoiceCityName = '你选的城市是：' + res.cityName
+          _this.youChoiceCityName = res.cityName
         }
       })
     },
@@ -373,28 +493,88 @@
       },
       close () {
         this.city.isShow = false
+      },
+      onFocus () {
+        this.isFocus = true
+        console.log('-------------onfocus')
+        this.$router.push({
+          path: '/search'
+        })
+      },
+      onBlur () {
+        this.isFocus = false
+        console.log('-------------onBlur')
       }
     }
   }
 </script>
 
-<style lang='less'>
-    html{
-        font-size: 100%;
-        background: #fff;
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+    .search-header{
+        padding: 0px 10px;
     }
-    body{
-        padding: 0.2rem 0.1rem!important;
-        box-sizing: border-box;
+    .arrow-icon{
+        position: relative;
+        left: 5px;
+        top: 6px;
+
     }
-    .choice{
-        font-size: 0.14rem;
-        padding: 10px;
-        border-radius: 3px;
-        background: #fff;
-        margin-bottom: 10px;
-        border: solid 1px #e5e5e5;
-        background: rgba(237, 85, 101, 0.8)!important;
-        color: #fff;
+    .arrow-icon:after {
+        border: 5px solid transparent;
+        border-left: 5px solid #333;
+        width: 0;
+        height: 0;
+        position: absolute;
+        content: ' ';
+        transform:rsotate(90deg);
+        -webkit-transform:rotate(90deg);
+        -trident-transform:rotate(90deg);
+        -gecko-transform:rotate(90deg);
+    }
+    .city-name{
+        width: 20%;
+        padding: 5px 0;
+    }
+    .search-input{
+        width: 80%;
+        position: relative;
+        input{
+            border: none;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 5px;
+            width: 100%;
+            font-size: 12px;
+        }
+    }
+    .weui-icon-search{
+        position: absolute;
+        right: 0px;
+        top: 5px;
+    }
+    .grid-pd{
+        padding: 0 15px;
+    }
+    .recommend{
+        position: relative;
+    }
+    .recommend-title{
+        padding-left: 8px;
+        font-size: 14px;
+        display: inline;
+    }
+    .recommend-title:before{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;
+        bottom: 0;
+        border-left: 6px solid #999;
+        color: #000000;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleX(0.5);
+        transform: scaleX(0.5);
     }
 </style>

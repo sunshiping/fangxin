@@ -1,3 +1,23 @@
+//全局
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
 .vux-popup-mask{
     top:100px !important;
 }
@@ -45,4 +65,19 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
+}
+
+//home
+.home{
+    //九宫格图片大小设置，边框去掉
+    .weui-grid__icon{
+        width: 45px;
+        height: 45px;
+    }
+    .weui-grid__label{
+        font-size: 12px;
+    }
+    .weui-grids:before, .weui-grids:after, .weui-grid:before, .weui-grid:after{
+        border: none;
+    }
 }
