@@ -14,6 +14,8 @@ export default {
 @import '~vux/src/styles/reset.less';
 @import '../static/css/weui.min.css';
 @import '../static/css/style.less';
+@import '~font-awesome/css/font-awesome.css';
+
 body {
   background-color: #fbf9fe;
 }

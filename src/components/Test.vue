@@ -378,7 +378,7 @@
   }
 </script>
 
-<style lang='less'>
+<style lang='less' scoped>
     html{
         font-size: 100%;
         background: #fff;
