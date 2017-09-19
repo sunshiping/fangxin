@@ -678,7 +678,7 @@
         position: relative;
     }
     .arrow-icon{
-        top: 12px;
+        top: 7px;
         position: absolute;
         right: 15px;
 
@@ -797,7 +797,8 @@
             width: 21%;
         }
         .arrow-icon{
-            right: 10px;
+            top: 5px;
+            /*right: 10px;*/
         }
     }
     .default-item-selected {

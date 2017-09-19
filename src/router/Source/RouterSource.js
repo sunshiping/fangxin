@@ -1,5 +1,7 @@
 import SourceList from '../../components/Source/SourceList.vue'
+import RentalList from '../../components/Source/RentalList.vue'
 import SourceInfo from '../../components/Source/SourceInfo.vue'
+import SecondhandList from '../../components/Source/SecondhandList.vue'
 import SourceTest from '../../components/Source/SourceTest.vue'
 import Test from '../../components/Test.vue'
 import MapTest from '../../components/Comment/MapComp.vue'
@@ -8,6 +10,16 @@ export default [{
   path: '/sourceList',
   name: 'sourceList',
   component: SourceList
+},
+{
+  path: '/rentalList',
+  name: 'rentalList',
+  component: RentalList
+},
+{
+  path: '/secondhandList',
+  name: 'SecondhandList',
+  component: SecondhandList
 },
 {
   path: '/sourceInfo',

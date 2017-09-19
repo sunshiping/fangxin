@@ -3,7 +3,7 @@
         <div class="search-header clearfix">
             <div class="city-name fl" @click='choiceCity()'><span>{{youChoiceCityName}}</span><span class="arrow-icon"></span></div>
             <div class="fr search-input">
-                <input type="search" value="" placeholder="搜索" @focus="onFocus" @blur="onBlur"/>
+                <input type="search" value="" placeholder="请输入区域、小区关键字" @focus="onFocus" @blur="onBlur"/>
                 <i class="weui-icon-search"></i>
             </div>
         </div>
@@ -17,7 +17,7 @@
         ></city>
 
         <grid :rows="3" :cols="2" class="grid-pd">
-            <grid-item :label="item.label" v-for="item in gridList" :key="item.id">
+            <grid-item :label="item.label" v-for="item in gridList" :key="item.id" :link="item.link">
                 <img slot="icon" :src="item.src">
             </grid-item>
         </grid>
@@ -61,36 +61,43 @@
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '二手房'
+            label: '二手房',
+            link: 'secondhandList'
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '租房'
+            label: '租房',
+            link: 'rentalList'
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '地图找房'
+            label: '地图找房',
+            link: ''
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '登记房源'
+            label: '登记房源',
+            link: ''
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '委托找房'
+            label: '委托找房',
+            link: ''
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
-            label: '个人中心'
+            label: '个人中心',
+            link: '/personal'
           }
         ],
         list: [
           {
+            id: '90001',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -101,6 +108,7 @@
             score: 4.8
           },
           {
+            id: '90002',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -111,6 +119,7 @@
             score: 4.9
           },
           {
+            id: '90003',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -121,6 +130,7 @@
             score: 4.8
           },
           {
+            id: '90004',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -131,6 +141,7 @@
             score: 4.9
           },
           {
+            id: '90005',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -141,6 +152,7 @@
             score: 4.8
           },
           {
+            id: '90006',
             name: '龙腾西城  3室2厅 89.61㎡ 龙腾西城',
             price: '240',
             unitPrice: '15000',
@@ -511,6 +523,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+    .home{
+        padding: 10px;
+    }
     .search-header{
         padding: 0px 10px;
     }
@@ -533,11 +548,11 @@
         -gecko-transform:rotate(90deg);
     }
     .city-name{
-        width: 20%;
+        /*width: 20%;*/
         padding: 5px 0;
     }
     .search-input{
-        width: 80%;
+        width: 73%;
         position: relative;
         input{
             border: none;
@@ -553,7 +568,7 @@
         top: 5px;
     }
     .grid-pd{
-        padding: 0 15px;
+        padding: 15px;
     }
     .recommend{
         position: relative;
