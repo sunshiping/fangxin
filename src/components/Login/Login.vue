@@ -36,12 +36,15 @@
     },
     methods: {
       save () {
-        this.$vux.loading.show({
-          text: '登陆中...'
+//        this.$vux.loading.show({
+//          text: '登陆中...'
+//        })
+//        setTimeout(() => {
+//          this.$vux.loading.hide()
+//        }, 2000)
+        this.$router.push({
+          path: '/home'
         })
-        setTimeout(() => {
-          this.$vux.loading.hide()
-        }, 2000)
       }
     }
   }
