@@ -523,11 +523,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-    .home{
-        padding: 10px;
+    .weui-grids{
+        margin: 10px 0;
+    }
+    .weui-grid{
+        padding: 10px !important;
     }
     .search-header{
-        padding: 0px 10px;
+        padding: 10px 10px 0 10px;
     }
     .arrow-icon{
         position: relative;
@@ -573,6 +576,7 @@
     }
     .recommend{
         position: relative;
+        margin-left: 10px;
     }
     .recommend-title{
         padding-left: 8px;
