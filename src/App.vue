@@ -18,6 +18,11 @@ export default {
 
 body {
   background-color: #fbf9fe;
+  height:100%;
+  margin:0;
 }
+  html{
+    height:100%;
+  }
 
 </style>
