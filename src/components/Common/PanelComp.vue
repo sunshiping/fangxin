@@ -2,7 +2,7 @@
     <div>
         <div class="fx-pan" v-for="item in list" :key="item.id">
             <flexbox>
-                <flexbox-item><div class="house-title">{{ item.name }}</div></flexbox-item>
+                <flexbox-item><div class="house-title" @click="info(item.id)">{{ item.name }}</div></flexbox-item>
                 <flexbox-item>
                     <div class="fr pdr10">
                         <rater-comp v-model="item.stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
@@ -57,6 +57,17 @@
       },
       props: {
         list: Array
+      },
+      methods: {
+        info (id) {
+          console.log(id)
+          this.$router.push({
+            path: 'sourceInfo',
+            query: {
+              id: id
+            }
+          })
+        }
       }
     }
 </script>

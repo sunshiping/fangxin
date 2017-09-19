@@ -51,7 +51,10 @@
 
             <div class="divide-line"></div>
 
-            <col2-comp :list="list"></col2-comp>
+            <div class="recommend">
+                <span class="recommend-title">推荐房源</span>
+            </div>
+            <col2-comp :list="list" class="recommend-list"></col2-comp>
 
             <div class="operation-btn">
                 <div class="btns">
@@ -179,6 +182,9 @@
         ]
       }
     },
+    created () {
+      console.log(this.$route.query.id)
+    },
     methods: {
       demo01_onIndexChange (index) {
         this.demo01_index = index
@@ -224,6 +230,7 @@
     }
     .info{
         background-color: #fff;
+        padding-bottom: 50px;
     }
     .house-info{
         padding: 5px 10px;
@@ -271,7 +278,7 @@
         -webkit-transform: rotate(-43deg);
     }
     .isFold{
-        height:50px;
+        height:40px;
         overflow: hidden;
     }
     .position{
@@ -290,8 +297,10 @@
         padding: 8px 10px;
         background-color: #eaeaea;
         position: fixed;
-        width: 96%;
+        width: 100%;
         bottom: 0;
+        left: -15px;
+
 
         .collection{
             text-align: center;
@@ -319,5 +328,12 @@
             overflow: hidden !important;
             margin: 0px auto 0px 20px !important;
         }
+    }
+    .recommend-title{
+        padding-left: 8px;
+        font-size: 14px;
+    }
+    .recommend-list{
+        padding-bottom: 10px;
     }
 </style>
