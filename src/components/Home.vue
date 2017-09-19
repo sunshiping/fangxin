@@ -35,13 +35,13 @@
 
 <script>
   import { Search, Grid, GridItem } from 'vux'
-  import city from 'vue-city'
+  import City from 'vue-city'
   import PanelComp from './Common/PanelComp.vue'
 
   export default {
     components: {
       Search,
-      city,
+      City,
       Grid,
       GridItem,
       PanelComp
