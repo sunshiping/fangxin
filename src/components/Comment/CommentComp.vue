@@ -10,7 +10,7 @@
       <!--house message-->
       <div v-for="item in list">
         <div class="weui-media-box_appmsg weui-media-box">
-        <div class="weui-media-box__hd" v-if="item.src">
+        <div class="weui-media-box__hd img-box" v-if="item.src">
           <img class="weui-media-box__thumb" :src="item.src" alt="">
         </div>
         <div class="weui-media-box__bd">
@@ -24,7 +24,7 @@
           <p class="weui-media-box__desc">{{item.address}}</p>
           <div class="weui-media-box_appmsg">
             <div class="vux-cell-primary">
-              <rater v-model="data1" slot="value" :max="5" :font-size="20" disabled></rater>
+              <rater v-model="data1" slot="value" :max="5" :font-size="22" disabled></rater>
             </div>
             <div class="star-right">{{'未评价'}}</div>
           </div>
@@ -35,28 +35,28 @@
       <div class="house-comm">
         <div class="evaluate-hd weui-media-box_appmsg">
           <div class="evaluate-left">房源综合评级</div>
-          <rater v-model="data1" slot="value" :max="5" :margin="4" disabled></rater>
+          <rater v-model="data1" slot="value" :max="5" :margin="4" :font-size="30" disabled></rater>
         </div>
         <div class="weui-form-preview__bd">
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">装修</div>
-            <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">户型</div>
-            <rater v-model="data3" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data3" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">采光</div>
-            <rater v-model="data4" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data4" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">视野</div>
-            <rater v-model="data5" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data5" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">内部设施</div>
-            <rater v-model="data6" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data6" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
         </div>
       </div>
@@ -73,11 +73,11 @@
       <div>
         <div class="evaluate-hd weui-media-box_appmsg">
           <div class="evaluate-left">业主综合评级</div>
-          <rater v-model="data1" slot="value" :max="5" :margin="4"></rater>
+          <rater v-model="data1" slot="value" :max="5" :margin="4" :font-size="30"></rater>
         </div>
         <div class="weui-media-box_appmsg weui-form-preview__bd">
           <div class="evaluate-left">配合程度</div>
-          <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+          <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
         </div>
       </div>
       <!--textarea-->
@@ -92,7 +92,7 @@
       <!--house message-->
       <div v-for="item in list">
         <div class="weui-media-box_appmsg weui-media-box">
-          <div class="weui-media-box__hd" v-if="item.src">
+          <div class="weui-media-box__hd img-box" v-if="item.src">
             <img class="weui-media-box__thumb" :src="item.src" alt="">
           </div>
           <div class="weui-media-box__bd">
@@ -106,7 +106,7 @@
             <p class="weui-media-box__desc">{{item.address}}</p>
             <div class="weui-media-box_appmsg">
               <div class="vux-cell-primary">
-                <rater v-model="data1" slot="value" :max="5" :font-size="20" disabled></rater>
+                <rater v-model="data1" slot="value" :max="5" :font-size="22" disabled></rater>
               </div>
               <div class="star-right active">{{'已评价'}}</div>
             </div>
@@ -129,16 +129,16 @@
       <div>
         <div class="evaluate-hd weui-media-box_appmsg">
           <div class="evaluate-left">{{ '经纪人综合评级' }}</div>
-          <rater v-model="data1" slot="value" :max="5" :margin="4"></rater>
+          <rater v-model="data1" slot="value" :max="5" :margin="4" :font-size="30"></rater>
         </div>
         <div class="weui-form-preview__bd">
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">{{ '专业知识点评' }}</div>
-            <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data2" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
           <div class="weui-media-box_appmsg">
             <div class="evaluate-left">{{ '服务点评' }}</div>
-            <rater v-model="data4" slot="value" star="☻" active-color="#FF9900" :margin="4"></rater>
+            <rater v-model="data4" slot="value" star="☻" active-color="#FF9900" :margin="4" :font-size="30"></rater>
           </div>
         </div>
       </div>

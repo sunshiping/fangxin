@@ -27,7 +27,7 @@
           data: '2017年9月13日 13:20'
         }],
         list: [{
-          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+          src: 'http://placeholder.qiniudn.com/80x80/3cc51f/ffffff',
           name: '梨园别墅',
           mess: '3室一厅·5/18层',
           price: '3000',
