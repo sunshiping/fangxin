@@ -1,7 +1,7 @@
 <template>
     <div class="login-content">
         <div class="login-box">
-            <img class="login" src="/static/login/logo.png" alt="login">
+            <img class="login" src="/static/images/logo.png" alt="login">
         </div>
         <p class="name"><x-input title="账号:" name="mobile" placeholder="请输入手机号" keyboard="number" is-type="china-mobile" ></x-input></p>
         <p class="password"><x-input title="密码:" type="password" placeholder="请输入密码"></x-input></p>

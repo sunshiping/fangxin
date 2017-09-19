@@ -60,37 +60,37 @@
         gridList: [
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '二手房',
             link: 'secondhandList'
           },
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '租房',
             link: 'rentalList'
           },
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '地图找房',
             link: ''
           },
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '登记房源',
             link: ''
           },
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '委托找房',
             link: ''
           },
           {
             id: '100001',
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             label: '个人中心',
             link: '/personal'
           }

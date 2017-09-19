@@ -1,7 +1,7 @@
 <template>
     <div class="down-content">
         <div class="header-img">
-            <img src="../../static/login/logo.png" />
+            <img src="../../static/images/logo.png" />
         </div>
         <div class="text-cont">
             <p class="title">房信网-专业的房产交易平台</p>

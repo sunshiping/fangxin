@@ -1,10 +1,5 @@
 <template>
     <div>
-        <!--<group class="personal">-->
-            <!--<cell title="我的收藏" link="/collection" ></cell>-->
-            <!--<cell title="我的委托" :link="{path:'/demo'}" ></cell>-->
-            <!--<cell title="浏览记录" link="https://vux.li" ></cell>-->
-        <!--</group>-->
         <div class="per-header">
             <span class="fa fa-home"></span>
             <div class="city-name" @click='choiceCity()'><span>{{youChoiceCityName}}</span><span class="arrow-icon"></span></div>
@@ -16,7 +11,15 @@
             <div class="info-p"><span>姓名：</span><span>张三</span></div>
             <div class="info-p"><span>性别：</span><span>男</span></div>
             <div class="info-p"><span>手机：</span><span>15617570123</span><span class="auth">已认证</span></div>
+            <div class="set">个人资料设置</div>
+            <div class="portrait"><img src="../../../static/images/portrait.png"/></div>
         </div>
+
+        <ul class="mine-list">
+            <li @click="collection"><span>我的收藏</span><span class="fa fa-star-o icon"></span></li>
+            <li><span>我的委托</span><span class="fa fa-star-o icon"></span></li>
+            <li><span>浏览记录</span><span class="fa fa-star-o icon"></span></li>
+        </ul>
 
         <city
                 :is-show.sync='city.isShow'
@@ -393,6 +396,11 @@
       },
       close () {
         this.city.isShow = false
+      },
+      collection () {
+        this.$router.push({
+          path: '/collection'
+        })
       }
     }
   }
@@ -412,12 +420,13 @@
         .city-name{
             display: inline-block;
             position: absolute;
-             top: 15px;
+            top: 15px;
+            font-size: 14px;
         }
         .arrow-icon{
             position: relative;
             left: 5px;
-            top: 6px;
+            top: 9px;
 
         }
         .arrow-icon:after {
@@ -462,11 +471,52 @@
                 font-size: 10px;
                 background-color: #d9d9d9;
                 padding: 3px;
+                color: #999;
                 margin-left: 5px;
 
             }
         }
+        .set{
+            padding: 8px 0;
+            background-color: #e9e9e9;
+            text-align: center;
+            color: #999;
+            margin: 15px 0;
+        }
+        .portrait{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
 
 
+    }
+    .mine-list{
+        padding: 0 10px;
+        li{
+            height:60px;
+            line-height: 60px;
+            border-top:1px solid #D9D9D9;
+            position: relative;
+            span{
+                font-size: 14px;
+                padding-left: 5px;
+            }
+            .icon{
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                font-size: 22px;
+                color: #9d9d9d;
+            }
+
+        }
     }
 </style>
