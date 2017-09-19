@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import { Loading, XInput, XButton, Divider, TransferDomDirective as TransferDom } from 'vux'
+  import { Loading, XInput, XButton, Divider, Group, TransferDomDirective as TransferDom } from 'vux'
 
   export default {
     directives: {
@@ -26,7 +26,8 @@
       Loading,
       XInput,
       XButton,
-      Divider
+      Divider,
+      Group
     },
     data () {
       return {

@@ -5,6 +5,7 @@ import SecondhandList from '../../components/Source/SecondhandList.vue'
 import SourceTest from '../../components/Source/SourceTest.vue'
 import Test from '../../components/Test.vue'
 import MapTest from '../../components/Comment/MapComp.vue'
+import Sell from '../../components/Source/Sell.vue'
 
 export default [{
   path: '/sourceList',
@@ -25,6 +26,11 @@ export default [{
   path: '/sourceInfo',
   name: 'sourceInfo',
   component: SourceInfo
+},
+{
+  path: '/sell',
+  name: 'sell',
+  component: Sell
 },
 {
   path: '/sourceTest',

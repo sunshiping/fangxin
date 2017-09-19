@@ -152,28 +152,28 @@
         position: '九龙城-龙腾西城',
         list: [
           {
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             name: '蔷薇花园 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             name: '蔷薇花园1 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             name: '蔷薇花园2 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/login/logo.png',
+            src: '../../static/images/logo.png',
             name: '蔷薇花园3 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
