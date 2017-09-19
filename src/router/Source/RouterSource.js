@@ -6,6 +6,8 @@ import SourceTest from '../../components/Source/SourceTest.vue'
 import Test from '../../components/Test.vue'
 import MapTest from '../../components/Comment/MapComp.vue'
 import Sell from '../../components/Source/Sell.vue'
+import Housing from '../../components/Source/Housing.vue'
+import FindHouse from '../../components/Source/FindHouse.vue'
 
 export default [{
   path: '/sourceList',
@@ -46,4 +48,14 @@ export default [{
   path: '/test',
   name: '测试百度地图1',
   component: Test
+},
+{
+  path: '/housing',
+  name: '登记房源',
+  component: Housing
+},
+{
+  path: '/findhouse',
+  name: '委托找房',
+  component: FindHouse
 }]

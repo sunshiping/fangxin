@@ -15,18 +15,4 @@
     </div>
 </template>
 <script></script>
-<style>
-    .down-content{
-         background-color: #ffffff;
-         height: 100%;
-         text-align: center;
-     }
-    .header-img{
-        padding: 50px 0 30px 0;
-        text-align: center;
-    }
-    .header-img img{
-        width: 20%;
-    }
-    h1{text-align: center}
-</style>
+
