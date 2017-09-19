@@ -80,13 +80,13 @@
             id: '100001',
             src: '../../static/login/logo.png',
             label: '登记房源',
-            link: ''
+            link: 'housing'
           },
           {
             id: '100001',
             src: '../../static/login/logo.png',
             label: '委托找房',
-            link: ''
+            link: 'findhouse'
           },
           {
             id: '100001',
