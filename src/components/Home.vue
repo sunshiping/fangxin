@@ -560,6 +560,7 @@
             padding: 5px;
             width: 100%;
             font-size: 12px;
+            background: none;
         }
     }
     .weui-icon-search{
