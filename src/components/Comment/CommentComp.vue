@@ -143,7 +143,7 @@
         </div>
       </div>
       <div class="vux-x-textarea">
-        <div class="weui-cell__bd">
+        <div class="weui-cell__bd text-padding">
           <x-textarea :max="300"  placeholder="输入您的评论吧" ></x-textarea>
         </div>
       </div>
@@ -191,8 +191,6 @@ export default {
 /*@import '../../../static/styles/weui/widget/weui_panel/weui_panel';*/
 /*@import '../../../static/styles/weui/widget/weui_media_box/weui_media_box';*/
 /*@import '../../../static/css/weui.min.css';*/
-
-
 
 .weui-panel .weui-cell:first-child:before {
   display: block;

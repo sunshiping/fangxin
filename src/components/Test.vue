@@ -384,7 +384,7 @@
         background: #fff;
     }
     body{
-        padding: 0.2rem 0.1rem!important;
+        /*padding: 0.2rem 0.1rem!important;*/
         box-sizing: border-box;
     }
     .choice{
