@@ -1,12 +1,15 @@
 <template>
     <div>
-        <flexbox class="select-head">
-            <flexbox-item v-for="(item, index) in screenNames" :key = "item.id">
-                <div class="select-type" @click="toSelect(index)">
-                    {{ item.name }}<span class="arrow-icon"></span>
-                </div>
-            </flexbox-item>
-        </flexbox>
+        <div class="head">
+            <flexbox class="select-head">
+                <flexbox-item v-for="(item, index) in screenNames" :key = "item.id">
+                    <div class="select-type" @click="toSelect(index)">
+                        {{ item.name }}<span class="arrow-icon"></span>
+                    </div>
+                </flexbox-item>
+            </flexbox>
+        </div>
+
 
         <div class="area-list select-list" v-show="showArea">
             <flexbox>
@@ -128,7 +131,7 @@
         </div>
 
         <div class="more select-list" v-show="showMore">
-            <scroller lock-x height="300px" :scrollbarY=true ref="scroller7">
+            <scroller lock-x height="320px" :scrollbarY=true ref="scroller7">
                 <div class="more-type">
                     <div class="group-type">
                         <div class="type-name">朝向</div>
@@ -140,7 +143,9 @@
                                     selected-item-class="default-item-selected">
 
 
-                                <checker-item :value="item.name" v-for="item in typeList1" :key="item.id">{{item.name}}</checker-item>
+                                <checker-item :value="item.name" v-for="item in typeList1" :key="item.id">
+                                    <span class="item-name">{{item.name}}</span>
+                                </checker-item>
                             </checker>
                         </div>
                         <!--<span>{{typeList1Checkbox}}</span>-->
@@ -156,7 +161,7 @@
                                     selected-item-class="default-item-selected">
 
 
-                                <checker-item :value="item.name" v-for="item in typeList2" :key="item.id">{{item.name}}</checker-item>
+                                <checker-item :value="item.name" v-for="item in typeList2" :key="item.id"><span class="item-name">{{item.name}}</span></checker-item>
                             </checker>
                         </div>
                         <!--<span>{{typeList2Checkbox}}</span>-->
@@ -673,14 +678,13 @@
 <style scoped="scoped" lang="less">
     .select-type{
         text-align: center;
-    }
-    .select-type{
         position: relative;
+        font-size: 13px;
     }
     .arrow-icon{
         top: 7px;
         position: absolute;
-        right: 15px;
+        right: 13px;
 
     }
     .arrow-icon:after {
@@ -704,10 +708,15 @@
         background-color: #fff;
         z-index: 1;
     }
-    .select-head{
-        height:50px;
+    .head{
+        padding: 0 10px;
         background-color: #eee;
+        .select-head{
+            height:50px;
+
+        }
     }
+
     .active{
         color: #0099CC;
     }
@@ -716,7 +725,7 @@
         line-height: 40px;
         padding-left: 10px;
         position: relative;
-        font-size: 14px;
+        font-size: 12px;
     }
     ul.select-col li:after{
         content: " ";
@@ -772,6 +781,7 @@
         padding-top: 3px !important;
     }
     .more-type{
+        padding: 10px;
         .type-name{
             font-size: 14px;
             padding: 5px 2px;
@@ -784,28 +794,33 @@
         }
     }
     .default-item {
-        border: 1px solid #d9d9d9;
-        width: 22%;
-        padding: 3px 2px;
-        text-align: center;
-        margin: 2px;
-        border-radius: 5px;
-        font-size: 12px;
+        width: 25%;
+        span.item-name{
+            display: block;
+            border: 1px solid #d9d9d9;
+            /*width: 22%;*/
+            padding: 3px 2px;
+            text-align: center;
+            margin: 2px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
     }
     @media (max-width: 320px) {
         .demo1-item {
             width: 21%;
         }
         .arrow-icon{
-            top: 5px;
+            top: 8px;
             /*right: 10px;*/
         }
     }
     .default-item-selected {
-        border: 1px solid green;
-    }
-    .more{
-        padding: 10px;
+        border: none;
+        span.item-name{
+            border: 1px solid green;
+        }
     }
     .divide-line{
         /*border-bottom: 1px solid #eee;*/

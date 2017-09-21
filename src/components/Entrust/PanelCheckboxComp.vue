@@ -65,7 +65,6 @@
     },
     watch: {
       currentCheckList () {
-        console.log('==========================')
 //        if (this.currentCheckList.length >= 1) {
 //          this.disabledCheck = true
 //        } else if (this.currentCheckList.length === 0) {
@@ -75,7 +74,6 @@
     },
     methods: {
       check () {
-        console.log('------------------>check')
       }
     }
   }

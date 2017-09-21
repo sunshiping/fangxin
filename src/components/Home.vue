@@ -551,8 +551,9 @@
         -gecko-transform:rotate(90deg);
     }
     .city-name{
-        /*width: 20%;*/
+        width: 20%;
         padding: 5px 0;
+        text-align: center;
     }
     .search-input{
         width: 73%;
