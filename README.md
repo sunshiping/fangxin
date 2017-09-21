@@ -26,10 +26,10 @@ npm run e2e
 # run all tests
 npm test
 
-
-vue生命周期
+#vue生命周期
+![image](https://github.com/sunshiping/fangxin/blob/master/src/assets/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 ```
-![image](https://github.com/sunshiping/fangxin/blob/master/static/images/logo.png)
+
 
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
