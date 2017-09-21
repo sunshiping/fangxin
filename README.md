@@ -28,7 +28,6 @@ npm test
 
 
 vue生命周期
-
 ```
 ![image](https://github.com/sunshiping/fangxin/blob/master/static/images/logo.png)
 
