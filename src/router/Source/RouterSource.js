@@ -46,7 +46,7 @@ export default [{
 },
 {
   path: '/test',
-  name: '测试百度地图1',
+  name: 'test',
   component: Test
 },
 {

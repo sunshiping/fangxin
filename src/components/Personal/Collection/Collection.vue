@@ -1,37 +1,21 @@
 <template>
     <div>
         <div class="clearfix tab">
-            <router-link to="/test/test1" active-class="active" tag="div" class="fl tab1"><span>二手房</span></router-link>
-            <router-link to="/test/test2" active-class="active" tag="div" class="fl tab2"><span>租房</span></router-link>
+            <router-link to="/collection/second" active-class="active" tag="div" class="fl tab1"><span>二手房</span></router-link>
+            <router-link to="/collection/rental" active-class="active" tag="div" class="fl tab2"><span>租房</span></router-link>
         </div>
 
         <router-view></router-view>
-
-
 
     </div>
 </template>
 
 <script>
-  import { Tab, TabItem, Swiper, SwiperItem } from 'vux'
-  import PanelComp from './Common/PanelComp.vue'
-  import ListPullComp from './Common/ListPullComp.vue'
 
   export default {
-    name: 'hello',
-    components: {
-      PanelComp,
-      Tab,
-      TabItem,
-      Swiper,
-      SwiperItem,
-      ListPullComp
-    },
     data () {
       return {
       }
-    },
-    methods: {
     }
   }
 </script>
@@ -53,7 +37,7 @@
             text-align: center;
         }
         .active span{
-            border-bottom: 2px solid #999;
+            border-bottom: 2px solid rgb(4, 190, 2);
             padding-bottom: 11px;
         }
         .active.tab2 span{

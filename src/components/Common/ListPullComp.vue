@@ -69,20 +69,30 @@
         }
       }
     },
+    mounted () {
+//      console.log('-------------------------<<<<<<<<<<<<<')
+      this.$nextTick(() => {
+        this.$refs.scroller.reset({
+          top: 0
+        })
+      })
+    },
     methods: {
       loadMore () {
+//        console.log('------------------')
         setTimeout(() => {
           this.n += 10
-          this.$nextTick(() => {
-            this.$refs.scroller.donePullup()
-            if (this.n >= 30) {
-              this.$refs.scroller.disablePullup()
-              console.log('No more data, Pullup disabled!')
-            }
-          })
+//          this.$nextTick(() => {
+//            this.$refs.scroller.donePullup()
+//            if (this.n >= 30) {
+//              this.$refs.scroller.disablePullup()
+//              console.log('No more data, Pullup disabled!')
+//            }
+//          })
         }, 2000)
       },
       refresh () {
+//        console.log('------------------1')
         setTimeout(() => {
           this.n = 10
           this.$nextTick(() => {

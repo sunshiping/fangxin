@@ -1,12 +1,28 @@
 <template>
     <div>
-        <group :title="'no placeholder, the current value is : ' + defaultValue">
-            <selector title="省份"  placeholder="请选择省份" :options="list" v-model="defaultValue"></selector>
+        <group title="您房源的具体位置?" label-width="5em">
+            <popup-picker
+                    :title="title1"
+                    :data="list1"
+                    v-model="value1"
+                    @on-show="onShow"
+                    @on-hide="onHide"
+                    @on-change="onChange"
+                    placeholder="请选择"
+            >
+            </popup-picker>
         </group>
-
-        <group title='multi selector'>
-            <selector placeholder="请选择省份" title="省份" :options="list" v-model="defaultValue"></selector>
-            <selector  title="省份" :options="list"></selector>
+        <group title="您房源的具体位置?" label-width="5em">
+            <popup-picker
+                    :title="title1"
+                    :data="list1"
+                    v-model="value1"
+                    @on-show="onShow"
+                    @on-hide="onHide"
+                    @on-change="onChange"
+                    placeholder="请选择"
+            >
+            </popup-picker>
         </group>
 
         
@@ -15,11 +31,13 @@
 </template>
 
 <script>
-  import { Selector, Group } from 'vux'
+  import { Selector, Group, PopupRadio, PopupPicker } from 'vux'
   export default {
     components: {
       Group,
-      Selector
+      Selector,
+      PopupRadio,
+      PopupPicker
     },
     data () {
       return {
@@ -74,7 +92,10 @@
             value: '广西'
           }
         ],
-        value2: 'gd'
+        value2: 'gd',
+        title1: '楼栋号',
+        list1: [['1', '2', '3', '4', '5', '6', '7']],
+        value1: ['1']
       }
     }
   }
