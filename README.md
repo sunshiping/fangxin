@@ -27,8 +27,8 @@ npm run e2e
 npm test
 
 #vue生命周期
-![image](https://github.com/sunshiping/fangxin/blob/master/src/assets/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 ```
+![image](https://github.com/sunshiping/fangxin/blob/master/src/assets/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 
 
