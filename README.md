@@ -28,7 +28,7 @@ npm test
 
 #vue生命周期
 ```
-![image style="width:500px;"](https://github.com/sunshiping/fangxin/blob/master/src/assets/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
+![image-w500](https://github.com/sunshiping/fangxin/blob/master/src/assets/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 
 
