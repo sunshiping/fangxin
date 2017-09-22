@@ -1,5 +1,5 @@
-import SecondhandList from '../../components/Source/SecondhandList.vue'
-import SourceInfo from '../../components/Source/SourceInfo.vue'
+import SecondhandList from '../../components/Second/SecondhandList.vue'
+import SourceInfo from '../../components/Second/SourceInfo.vue'
 
 export default [{
   path: '/secondhandList',

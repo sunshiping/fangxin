@@ -62,31 +62,31 @@
             id: '100001',
             src: '../../static/images/logo.png',
             label: '二手房',
-            link: 'secondhandList'
+            link: '/secondhandList'
           },
           {
             id: '100001',
             src: '../../static/images/logo.png',
             label: '租房',
-            link: 'rentalList'
+            link: '/rentalList'
           },
           {
             id: '100001',
             src: '../../static/images/logo.png',
             label: '地图找房',
-            link: ''
+            link: '/map'
           },
           {
             id: '100001',
             src: '../../static/images/logo.png',
             label: '登记房源',
-            link: 'housing'
+            link: '/registerhouse'
           },
           {
             id: '100001',
             src: '../../static/images/logo.png',
             label: '委托找房',
-            link: 'findhouse'
+            link: '/findhouse'
           },
           {
             id: '100001',
