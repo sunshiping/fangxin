@@ -62,7 +62,7 @@
         info (id) {
           console.log(id)
           this.$router.push({
-            path: 'sourceInfo',
+            path: '/sourceInfo',
             query: {
               id: id
             }
