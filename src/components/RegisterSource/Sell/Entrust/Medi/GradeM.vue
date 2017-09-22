@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import PanelCheckboxComp from '../PanelCheckboxComp.vue'
+  import PanelCheckboxComp from '../../../../Common/PanelCheckboxComp.vue'
   import ListPullComp from '../../../../Common/ListPullComp.vue'
 
   export default {
