@@ -9,11 +9,6 @@ import MapTest from '../../components/Comment/MapComp.vue'
 // import SellStep4 from '../../components/Source/Sell/Step4.vue'
 // import SellStep5 from '../../components/Source/Sell/Step5.vue'
 // import Housing from '../../components/Source/Housing.vue'
-import FindHouse from '../../components/Source/FindHouse.vue'
-import HouseType from '../../components/Source/houseType.vue'
-import AreaPrice from '../../components/Source/AreaPrice.vue'
-import RentOther from '../../components/Source/RentOther.vue'
-import RentPersonal from '../../components/Source/RentPersonal.vue'
 export default [{
 //   path: '/sourceList',
 //   name: 'sourceList',
@@ -63,35 +58,10 @@ export default [{
   path: '/test',
   name: 'test',
   component: Test
-},
+}
 // {
 //   path: '/housing',
 //   name: '登记房源',
 //   component: Housing
 // },
-{
-  path: '/findhouse',
-  name: '委托找房',
-  component: FindHouse
-},
-{
-  path: '/houseType',
-  name: 'houseType1',
-  component: HouseType
-},
-{
-  path: '/areaprice',
-  name: 'areaprice',
-  component: AreaPrice
-},
-{
-  path: '/rentother',
-  name: 'rentother',
-  component: RentOther
-},
-{
-  path: '/rentpersonal',
-  name: 'rentpersonal',
-  component: RentPersonal
-}
 ]

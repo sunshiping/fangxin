@@ -8,6 +8,7 @@ import RouterMine from './Mine/RouterMine'
 import RouterDown from './Down/RouterDown'
 import RouterHome from './Home/RouterHome'
 import RouterSecond from './Second/RouterSecond'
+import FindRoom from './FindRoom/RouterFindRoom'
 
 const allRoutes = RouterSource.concat(
   RouterSource1,
@@ -18,7 +19,8 @@ const allRoutes = RouterSource.concat(
   RouterMine,
   RouterDown,
   RouterHome,
-  RouterSecond
+  RouterSecond,
+  FindRoom
 )
 
 export default allRoutes

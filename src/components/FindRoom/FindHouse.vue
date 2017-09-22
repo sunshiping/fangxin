@@ -20,7 +20,7 @@
       },
       open () {
         this.$router.push({
-          path: '/houseType'
+          path: '/buyareaprice'
         })
       }
     }
