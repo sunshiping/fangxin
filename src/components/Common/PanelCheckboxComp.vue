@@ -21,7 +21,7 @@
                     <div class="weui-cells_checkbox">
                         <label class="weui-check__label" :for="'checkbox_' + index">
                             <div class="weui-cell__hd">
-                                <input type="checkbox"
+                                <input type="radio"
                                        :value="item.id"
                                        v-model="currentCheckList"
                                        class="weui-check"
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-  import RaterComp from '../../../Common/RaterComp.vue'
+  import RaterComp from './RaterComp.vue'
   export default {
     components: {
       RaterComp
