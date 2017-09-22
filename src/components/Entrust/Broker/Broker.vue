@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="select">选择中介公司</div>
+    <div class="back-header">
+        <x-header :left-options="{backText: ''}" title="选择经纪人"></x-header>
         <div class="clearfix tab">
             <router-link
                     v-for="item in tabList"
@@ -17,12 +17,24 @@
 
         <router-view></router-view>
 
+        <div class="btn-wrap">
+            <div class="btn">
+                <x-button type="primary" class="confirm" min>确认委托</x-button>
+            </div>
+        </div>
+
+
+
     </div>
 </template>
 
 <script>
-
+  import { XButton, XHeader } from 'vux'
   export default {
+    components: {
+      XButton,
+      XHeader
+    },
     data () {
       return {
         tabList: [
@@ -45,6 +57,19 @@
 </script>
 
 <style scoped lang="less">
+
+    .btn-wrap{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .btn{
+        padding: 10px;
+    }
+    .confirm{
+        font-size: 14px;
+        padding: 5px 0;
+    }
     .select{
         font-size: 20px;
         text-align: center;

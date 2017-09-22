@@ -85,12 +85,16 @@
         padding-bottom: 6px;
     }
     .weui-media-box__desc{
-        padding: 3px 0;
+        margin: 3px 0;
     }
     .weui-cells_checkbox .weui-cell__hd{
         padding-right: 0;
     }
     .weui-cells_checkbox .weui-icon-checked:before{
         font-size: 20px;
+    }
+    .weui-media-box_appmsg .weui-media-box__hd{
+        width: 90px;
+        height: 90px;
     }
 </style>
