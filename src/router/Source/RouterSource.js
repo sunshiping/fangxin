@@ -14,7 +14,7 @@ import SellStep5 from '../../components/Source/Sell/Step5.vue'
 import Housing from '../../components/Source/Housing.vue'
 import FindHouse from '../../components/Source/FindHouse.vue'
 import HouseType from '../../components/Source/houseType.vue'
-import AreaPrice from '../../components/Source/AreaPrice.vue'
+import AreaPrice from '../../components/Source/PriceArea.vue'
 import RentOther from '../../components/Source/RentOther.vue'
 import RentPersonal from '../../components/Source/RentPersonal.vue'
 export default [{

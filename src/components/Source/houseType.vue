@@ -27,6 +27,9 @@
     methods: {
       onChange (val) {
         console.log('val change', val)
+        if (val.length !== '') {
+          this.disable01 = false
+        }
       },
       onShow () {
         console.log('on show')
@@ -47,7 +50,8 @@
         list1: [['1', '2', '3', '4', '5', '6', '7']],
         list2: [['1', '2', '3', '4', '5', '6', '7']],
         value1: [],
-        value2: []
+        value2: [],
+        disable01: true
       }
     }
   }
