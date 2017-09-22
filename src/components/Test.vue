@@ -1,64 +1,80 @@
 <template>
-    <div>
-        <div class="clearfix tab">
-            <router-link to="/test/test1" active-class="active" tag="div" class="fl tab1"><span>二手房</span></router-link>
-            <router-link to="/test/test2" active-class="active" tag="div" class="fl tab2"><span>租房</span></router-link>
-        </div>
+    <div class="map-test">
+        <baidu-map class="map" center="中国" :scroll-wheel-zoom="true">
+            <bml-marker-clusterer :averageCenter="true" :styles="styles">
+                <bm-marker
+                        v-for="marker in markers"
+                        :key ='marker.lng'
+                        :position="{lng: marker.lng, lat: marker.lat}"
+                >
+                </bm-marker>
+            </bml-marker-clusterer>
 
-        <router-view></router-view>
+            <!--<bm-boundary name="北京市海淀区" :strokeWeight="2" strokeColor="blue"></bm-boundary>-->
+        </baidu-map>
+    {{ markers }}
 
-
+        <!--<baidu-map class="map" :center="{lng: 116.403765, lat: 39.914850}" :zoom="11">-->
+            <!--<bm-boundary-->
+                    <!--name="北京市海淀区"-->
+                    <!--:strokeWeight="2"-->
+                    <!--strokeColor="blue"-->
+                    <!--@mouseover="over"-->
+                    <!--@remove="leave"-->
+            <!--&gt;</bm-boundary>-->
+        <!--</baidu-map>-->
 
     </div>
 </template>
 
 <script>
-  import { Tab, TabItem, Swiper, SwiperItem } from 'vux'
-  import PanelComp from './Common/PanelComp.vue'
-  import ListPullComp from './Common/ListPullComp.vue'
+  import { BmlMarkerClusterer } from 'vue-baidu-map'
 
   export default {
-    name: 'hello',
     components: {
-      PanelComp,
-      Tab,
-      TabItem,
-      Swiper,
-      SwiperItem,
-      ListPullComp
+      BmlMarkerClusterer
     },
     data () {
+      // 插入 10 个随机点
+      const markers = []
+      for (let i = 0; i < 10; i++) {
+        const position = {lng: Math.random() * 10 + 85, lat: Math.random() * 10 + 21}
+        markers.push(position)
+      }
       return {
+        markers,
+        styles: [
+          {
+            textColor: 'red',
+            url: '../../static/images/red.png',
+            size: {
+              width: 92,
+              height: 92
+            }
+          }
+        ],
+        isOver: false
       }
     },
     methods: {
+      over () {
+        console.log('--------------over')
+        this.isOver = true
+      },
+      leave () {
+        console.log('---------------leave')
+        this.isOver = false
+      }
     }
   }
 </script>
 
-<style scoped lang="less">
-    .tab{
-        border-bottom: 1px solid #D9D9D9;
-        height: 40px;
-        line-height: 40px;
-        font-size: 14px;
-
-        .tab1{
-            width: 50%;
-            text-align: center;
-
-        }
-        .tab2{
-            width: 50%;
-            text-align: center;
-        }
-        .active span{
-            border-bottom: 2px solid #999;
-            padding-bottom: 11px;
-        }
-        .active.tab2 span{
-            padding: 0 5px 11px 5px;
-        }
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+    .map-test{
+        height: 100%;
     }
-
+    .map{
+        height: 100%;
+    }
 </style>
