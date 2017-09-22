@@ -1,8 +1,9 @@
 <template>
     <div class="personal">
+        <x-header></x-header>
         <group title="您的个人信息?">
-            <x-input title="联系人" name="username" placeholder="请输入业主姓名" is-type="china-name" v-model="info.contactName"></x-input>
-            <x-input
+            <x-input class="require-icon" title="联系人" name="username" placeholder="请输入业主姓名" is-type="china-name" v-model="info.contactName" required></x-input>
+            <x-input class="require-icon"
                     title="手机号"
                     name="mobile"
                     placeholder="请输入手机号码"
@@ -28,13 +29,11 @@
 
             </x-input>
 
-            <x-input title="标 题" placeholder="请输入您的展示标题" v-model="info.showTitle" ></x-input>
         </group>
 
         <!--<p class="check"><input v-model="isChecked" type="checkbox" value=true>我已阅读并且同意<a href="#">《房屋委托协议》</a></p>-->
 
         <check-icon :value.sync="isGreen" class="check">我已阅读并且同意<a href="#">《房屋委托协议》</a>
-            ({{ isGreen }})
         </check-icon>
 
         <div class="btns">
@@ -58,7 +57,7 @@
 </template>
 
 <script>
-  import { GroupTitle, Group, Cell, XInput, XButton, Checklist, Flexbox, FlexboxItem, CheckIcon, Countdown, XSwitch } from 'vux'
+  import { GroupTitle, Group, Cell, XInput, XButton, Checklist, Flexbox, FlexboxItem, CheckIcon, Countdown, XSwitch, XHeader } from 'vux'
   export default {
     name: 'hello',
     components: {
@@ -72,7 +71,8 @@
       FlexboxItem,
       CheckIcon,
       Countdown,
-      XSwitch
+      XSwitch,
+      XHeader
     },
     data () {
       return {
