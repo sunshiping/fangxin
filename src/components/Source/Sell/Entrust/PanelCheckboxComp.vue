@@ -49,7 +49,7 @@
 </template>
 
 <script>
-  import RaterComp from '../Common/RaterComp.vue'
+  import RaterComp from '../../../Common/RaterComp.vue'
   export default {
     components: {
       RaterComp

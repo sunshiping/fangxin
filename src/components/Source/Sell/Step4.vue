@@ -40,7 +40,7 @@
         console.log(this.$refs)
         console.log(a)
         this.$router.push({
-          path: '/sell/step5'
+          path: '/step5'
         })
       }
     }

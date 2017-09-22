@@ -92,7 +92,7 @@
             id: '100001',
             src: '../../static/images/logo.png',
             label: '个人中心',
-            link: '/personal'
+            link: '/mine'
           }
         ],
         list: [
