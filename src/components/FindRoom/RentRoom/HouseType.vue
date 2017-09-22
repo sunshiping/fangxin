@@ -39,7 +39,7 @@
       },
       link () {
         this.$router.push({
-          path: '/areaprice'
+          path: '/rentareaprice'
         })
       }
     },

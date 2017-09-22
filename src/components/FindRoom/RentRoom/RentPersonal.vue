@@ -46,13 +46,6 @@
                 </flexbox-item>
             </flexbox>
         </div>
-
-        <!--{{ isChecked}} {{ info }}-->
-
-
-
-
-
     </div>
 </template>
 

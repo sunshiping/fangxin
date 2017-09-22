@@ -9,6 +9,7 @@ import RouterDown from './Down/RouterDown'
 import RouterHome from './Home/RouterHome'
 import RouterSecond from './Second/RouterSecond'
 import RouterMap from './Map/RouterMap'
+import FindRoom from './FindRoom/RouterFindRoom'
 
 const allRoutes = RouterRegisterSource.concat(
   RouterSource1,
@@ -20,7 +21,8 @@ const allRoutes = RouterRegisterSource.concat(
   RouterDown,
   RouterHome,
   RouterSecond,
-  RouterMap
+  RouterMap,
+  FindRoom
 )
 
 export default allRoutes
