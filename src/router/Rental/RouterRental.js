@@ -1,3 +1,7 @@
-// import Hello from './../../components/Hello.vue'
+import RentalList from '../../components/Source/RentalList.vue'
 
-export default []
+export default [{
+  path: '/rentalList',
+  name: 'rentalList',
+  component: RentalList
+}]

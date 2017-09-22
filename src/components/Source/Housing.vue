@@ -19,7 +19,7 @@
     methods: {
       link () {
         this.$router.push({
-          path: '/sell/step1'
+          path: '/step1'
         })
       }
     }

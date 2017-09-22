@@ -1,115 +1,87 @@
-import SourceList from '../../components/Source/SourceList.vue'
-import RentalList from '../../components/Source/RentalList.vue'
-import SourceInfo from '../../components/Source/SourceInfo.vue'
-import SecondhandList from '../../components/Source/SecondhandList.vue'
-import SourceTest from '../../components/Source/SourceTest.vue'
-import Test from '../../components/Test.vue'
-import MapTest from '../../components/Comment/MapComp.vue'
-import Sell from '../../components/Source/Sell.vue'
+import Housing from '../../components/Source/Housing.vue'
 import SellStep1 from '../../components/Source/Sell/Step1.vue'
 import SellStep2 from '../../components/Source/Sell/Step2.vue'
 import SellStep3 from '../../components/Source/Sell/Step3.vue'
 import SellStep4 from '../../components/Source/Sell/Step4.vue'
 import SellStep5 from '../../components/Source/Sell/Step5.vue'
-import Housing from '../../components/Source/Housing.vue'
-import FindHouse from '../../components/Source/FindHouse.vue'
-import HouseType from '../../components/Source/houseType.vue'
-import AreaPrice from '../../components/Source/PriceArea.vue'
-import RentOther from '../../components/Source/RentOther.vue'
-import RentPersonal from '../../components/Source/RentPersonal.vue'
+
+import Broker from '../../components/Source/Sell/Entrust/Broker/Broker.vue'
+import SortB from '../../components/Source/Sell/Entrust/Broker/SortB.vue'
+import CountB from '../../components/Source/Sell/Entrust/Broker/CountB.vue'
+import GradeB from '../../components/Source/Sell/Entrust/Broker/GradeB.vue'
+
+import Medi from '../../components/Source/Sell/Entrust/Medi/Medi.vue'
+import SortM from '../../components/Source/Sell/Entrust/Medi/SortM.vue'
+import CountM from '../../components/Source/Sell/Entrust/Medi/CountM.vue'
+import GradeM from '../../components/Source/Sell/Entrust/Medi/GradeM.vue'
+
 export default [{
-  path: '/sourceList',
-  name: 'sourceList',
-  component: SourceList
-},
-{
-  path: '/rentalList',
-  name: 'rentalList',
-  component: RentalList
-},
-{
-  path: '/secondhandList',
-  name: 'SecondhandList',
-  component: SecondhandList
-},
-{
-  path: '/sourceInfo',
-  name: 'sourceInfo',
-  component: SourceInfo
-},
-{
-  path: '/sell',
-  name: 'sell',
-  component: Sell
-},
-{
-  path: '/sell/step1',
-  name: 'step1',
-  component: SellStep1
-},
-{
-  path: '/sell/step2',
-  name: 'step2',
-  component: SellStep2
-},
-{
-  path: '/sell/step3',
-  name: 'step3',
-  component: SellStep3
-},
-{
-  path: '/sell/step4',
-  name: 'step4',
-  component: SellStep4
-},
-{
-  path: '/sell/step5',
-  name: 'step5',
-  component: SellStep5
-},
-{
-  path: '/sourceTest',
-  name: '房源列表筛选弹框测试',
-  component: SourceTest
-},
-{
-  path: '/map',
-  name: '测试百度地图2',
-  component: MapTest
-},
-{
-  path: '/test',
-  name: 'test',
-  component: Test
-},
-{
   path: '/housing',
   name: '登记房源',
   component: Housing
 },
 {
-  path: '/findhouse',
-  name: '委托找房',
-  component: FindHouse
+  path: '/step1',
+  name: 'houseName',
+  component: SellStep1
 },
 {
-  path: '/houseType',
+  path: '/step2',
+  name: 'pos',
+  component: SellStep2
+},
+{
+  path: '/step3',
   name: 'houseType',
-  component: HouseType
+  component: SellStep3
 },
 {
-  path: '/areaprice',
-  name: 'areaprice',
-  component: AreaPrice
+  path: '/step4',
+  name: 'areaPrice',
+  component: SellStep4
 },
 {
-  path: '/rentother',
-  name: 'rentother',
-  component: RentOther
+  path: '/step5',
+  name: 'personalInfo',
+  component: SellStep5
 },
 {
-  path: '/rentpersonal',
-  name: 'rentpersonal',
-  component: RentPersonal
-}
-]
+  path: '/broker',
+  name: 'broker',
+  redirect: '/broker/sort',
+  component: Broker,
+  children: [
+    {
+      path: '/broker/sort',
+      component: SortB
+    },
+    {
+      path: '/broker/count',
+      component: CountB
+    },
+    {
+      path: '/broker/grade',
+      component: GradeB
+    }
+  ]
+},
+{
+  path: '/medi',
+  name: 'medi',
+  redirect: '/medi/sort',
+  component: Medi,
+  children: [
+    {
+      path: '/medi/sort',
+      component: SortM
+    },
+    {
+      path: '/medi/count',
+      component: CountM
+    },
+    {
+      path: '/medi/grade',
+      component: GradeM
+    }
+  ]
+}]

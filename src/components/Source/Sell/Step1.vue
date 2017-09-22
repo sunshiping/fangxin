@@ -34,7 +34,7 @@
     methods: {
       link () {
         this.$router.push({
-          path: '/sell/step2'
+          path: '/step2'
         })
       },
       onSubmit (val) {
