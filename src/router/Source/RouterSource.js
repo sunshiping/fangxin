@@ -11,6 +11,7 @@ import FindHouse from '../../components/Source/FindHouse.vue'
 import HouseType from '../../components/Source/houseType.vue'
 import AreaPrice from '../../components/Source/AreaPrice.vue'
 import RentOther from '../../components/Source/RentOther.vue'
+import RentPersonal from '../../components/Source/RentPersonal.vue'
 export default [{
   path: '/sourceList',
   name: 'sourceList',
@@ -75,5 +76,10 @@ export default [{
   path: '/rentother',
   name: 'rentother',
   component: RentOther
+},
+{
+  path: '/rentpersonal',
+  name: 'rentpersonal',
+  component: RentPersonal
 }
 ]

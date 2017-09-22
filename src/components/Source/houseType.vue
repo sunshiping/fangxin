@@ -8,7 +8,8 @@
             <popup-picker :title="title1" :data="list1" v-model="value1" @on-show="onShow" @on-hide="onHide" @on-change="onChange" placeholder="请选择数字" ></popup-picker>
             <popup-picker :title="title2" :data="list2" v-model="value2" @on-show="onShow" @on-hide="onHide" @on-change="onChange" placeholder="请选择数字" ></popup-picker>
             </group>
-            <div class="footer"><span class="weui-btn" @click='link()'>下一步</span></div>
+            <x-button class="footer" type="primary" :disabled="disable01" @click.native="link">下一步</x-button>
+
         </div>
     </div>
 </template>
