@@ -1,6 +1,10 @@
 <template>
     <div class="back-header">
-        <x-header :left-options="{backText: ''}" title="选择经纪人"></x-header>
+        <x-header
+                @on-click-back="back"
+                title="选择经纪人"
+                :left-options="{preventGoBack: true}"
+        ></x-header>
         <div class="clearfix tab">
             <router-link
                     v-for="item in tabList"
@@ -51,6 +55,13 @@
             name: '评级优先'
           }
         ]
+      }
+    },
+    methods: {
+      back () {
+        this.$router.push({
+          path: '/sell/step5'
+        })
       }
     }
   }
