@@ -1,5 +1,6 @@
 <template>
-    <div class="personal">
+    <div class="personal rent-content">
+        <x-header></x-header>
         <group title="您的个人信息?">
             <x-input
                     title="手机号"
@@ -58,7 +59,7 @@
 </template>
 
 <script>
-  import { GroupTitle, Group, Cell, XInput, XButton, Checklist, Flexbox, FlexboxItem, CheckIcon, Countdown, XSwitch } from 'vux'
+  import { GroupTitle, Group, Cell, XInput, XButton, Checklist, Flexbox, FlexboxItem, CheckIcon, Countdown, XSwitch, XHeader } from 'vux'
   export default {
     name: 'hello',
     components: {
@@ -72,7 +73,8 @@
       FlexboxItem,
       CheckIcon,
       Countdown,
-      XSwitch
+      XSwitch,
+      XHeader
     },
     data () {
       return {
@@ -113,7 +115,6 @@
         }
       },
       entrust1 () {
-        console.log('6666')
         this.$router.push({
           path: '/broker'
         })
