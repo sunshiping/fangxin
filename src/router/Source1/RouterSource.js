@@ -1,14 +1,12 @@
 // import SourceList from '../../components/Source/SourceList.vue'
 import SourceTest from '../../components/Source/SourceTest.vue'
-import Test from '../../components/Test.vue'
+import Test from '../../components/Map/Map.vue'
 import MapTest from '../../components/Comment/MapComp.vue'
-// import Sell from '../../components/Source/Sell.vue'
 // import SellStep1 from '../../components/Source/Sell/Step1.vue'
 // import SellStep2 from '../../components/Source/Sell/Step2.vue'
 // import SellStep3 from '../../components/Source/Sell/Step3.vue'
 // import SellStep4 from '../../components/Source/Sell/Step4.vue'
 // import SellStep5 from '../../components/Source/Sell/Step5.vue'
-// import Housing from '../../components/Source/Housing.vue'
 import FindHouse from '../../components/Source/FindHouse.vue'
 import HouseType from '../../components/Source/houseType.vue'
 import AreaPrice from '../../components/Source/AreaPrice.vue'
@@ -18,11 +16,6 @@ export default [{
 //   path: '/sourceList',
 //   name: 'sourceList',
 //   component: SourceList
-// },
-// {
-//   path: '/sell',
-//   name: 'sell',
-//   component: Sell
 // },
 // {
 //   path: '/sell/step1',
@@ -55,7 +48,7 @@ export default [{
   component: SourceTest
 },
 {
-  path: '/map',
+  path: '/mapTest',
   name: '测试百度地图2',
   component: MapTest
 },
@@ -64,11 +57,6 @@ export default [{
   name: 'test',
   component: Test
 },
-// {
-//   path: '/housing',
-//   name: '登记房源',
-//   component: Housing
-// },
 {
   path: '/findhouse',
   name: '委托找房',

@@ -14,9 +14,9 @@
 
 
 <script>
-    import PanelComp from '../Common/PanelComp.vue'
-    import ListPullComp from '../Common/ListPullComp.vue'
-    import FilterTabComp from './FilterTabComp.vue'
+    import PanelComp from './PanelComp.vue'
+    import ListPullComp from './ListPullComp.vue'
+    import FilterTabComp from '../Source/FilterTabComp.vue'
 
     export default {
       components: {

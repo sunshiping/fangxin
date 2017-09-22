@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import SourceListComp from './SourceList.vue'
+  import SourceListComp from '../Common/SourceListComp.vue'
 
   export default {
     name: 'hello',

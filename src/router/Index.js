@@ -1,5 +1,5 @@
 import RouterSource1 from './Source1/RouterSource'
-import RouterSource from './Source/RouterSource'
+import RouterRegisterSource from './RegisterSource/RouterRegisterSource'
 import RouterTourists from './Tourists/RouterTourists'
 import RouterRental from './Rental/RouterRental'
 import RouterComment from './Comment/RouterComment'
@@ -8,8 +8,9 @@ import RouterMine from './Mine/RouterMine'
 import RouterDown from './Down/RouterDown'
 import RouterHome from './Home/RouterHome'
 import RouterSecond from './Second/RouterSecond'
+import RouterMap from './Map/RouterMap'
 
-const allRoutes = RouterSource.concat(
+const allRoutes = RouterRegisterSource.concat(
   RouterSource1,
   RouterTourists,
   RouterRental,
@@ -18,7 +19,8 @@ const allRoutes = RouterSource.concat(
   RouterMine,
   RouterDown,
   RouterHome,
-  RouterSecond
+  RouterSecond,
+  RouterMap
 )
 
 export default allRoutes
