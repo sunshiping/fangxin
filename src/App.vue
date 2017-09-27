@@ -20,6 +20,7 @@ body {
   background-color: #fbf9fe;
   height:100%;
   margin:0;
+  font-size: 14px !important;
 }
 html{
   height:100%;

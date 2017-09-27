@@ -27,7 +27,9 @@
     methods: {
       onChange (val) {
         console.log('val change', val)
-        if (val.length !== '') {
+        console.log('this.value1.length', this.value1.length)
+        console.log('this.value2.length', this.value2.length)
+        if (this.value1.length !== 0 && this.value2.length !== 0) {
           this.disable01 = false
         }
       },

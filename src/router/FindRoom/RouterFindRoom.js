@@ -3,8 +3,8 @@ import HouseType from '../../components/FindRoom/RentRoom/HouseType.vue'
 import RentAreaPrice from '../../components/FindRoom/RentRoom/RentAreaPrice.vue'
 import RentOther from '../../components/FindRoom/RentRoom/RentOther.vue'
 import RentPersonal from '../../components/FindRoom/RentRoom/RentPersonal.vue'
-import BuyAreaPrice from '../../components/FindRoom/BuyRoom/BuyAreaPrice.vue'
-import BuyOther from '../../components/FindRoom/BuyRoom/BuyOther.vue'
+import SaleAreaPrice from '../../components/FindRoom/SaleRoom/SaleAreaPrice.vue'
+import SaleOther from '../../components/FindRoom/SaleRoom/SaleOther.vue'
 
 export default [{
   path: '/findhouse',
@@ -32,13 +32,13 @@ export default [{
   component: RentPersonal
 },
 {
-  path: '/buyareaprice',
+  path: '/saleareaprice',
   name: '求购/面积及售价',
-  component: BuyAreaPrice
+  component: SaleAreaPrice
 },
 {
-  path: '/buyother',
+  path: '/saleother',
   name: '求购/用途及其他',
-  component: BuyOther
+  component: SaleOther
 }
 ]
