@@ -27,7 +27,7 @@
     },
     data () {
       return {
-        value2: 'vux',
+        value2: '小区名称',
         results: ['1', '2']
       }
     },

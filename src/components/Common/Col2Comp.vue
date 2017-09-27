@@ -1,17 +1,17 @@
 <template>
     <div>
         <flexbox :gutter="0" wrap="wrap">
-            <flexbox-item :span="1/2" v-for="item in list" :key="item.name">
-                <div class="flex-demo">
+            <flexbox-item :span="1/2" v-for="item in list" :key="item.name" >
+                <div class="flex-demo" >
                     <div class="picture">
                         <img :src="item.src">
                     </div>
 
                     <div class="desc">
                         <p class="house-desc">
-                            <span>{{ item.name }}</span>
+                            <span @click="info(item.id)">{{ item.name }}</span>
                         </p>
-                        <span class="house-price">{{ item.price }}</span>
+                        <span class="house-price">{{ item.price }}万</span>
                         <span class="house-unit-price">{{ item.unitPrice }}</span>
                     </div>
 
@@ -39,6 +39,17 @@
       return {
 
       }
+    },
+    methods: {
+      info (id) {
+        console.log(id)
+        this.$router.push({
+          path: '/sourceInfo',
+          query: {
+            id: id
+          }
+        })
+      }
     }
   }
 </script>
@@ -47,16 +58,26 @@
 <style scoped lang="less">
     .flex-demo{
         padding: 10px;
-    }
-    .picture{
-        img{
-            border :1px solid #ccc;
-            width: 100%;
+        .picture{
+            height: 120px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .desc{
+            padding-top: 5px;
         }
     }
+
     .house-desc{
         font-size: 12px;
         color: #999;
+        span{
+            color: #333;
+        }
 
     }
     .house-price{

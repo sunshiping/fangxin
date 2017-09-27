@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="fx-pan" v-for="item in list" :key="item.id">
+        <div class="fx-pan" v-for="item in list" :key="item.id" @click="info(item.id)">
             <flexbox>
-                <flexbox-item><div class="house-title" @click="info(item.id)">{{ item.name }}</div></flexbox-item>
+                <flexbox-item><div class="house-title" >{{ item.name }}</div></flexbox-item>
                 <flexbox-item>
-                    <div class="fr pdr10">
+                    <div class="fr">
                         <rater-comp v-model="item.stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
                             <span class="score" slot="score" >{{ item.score }}分</span>
                         </rater-comp>
@@ -33,7 +33,7 @@
                 <flexbox-item><div class="see-count">带看：{{ item.seeCount }}次</div></flexbox-item>
             </flexbox>
 
-            <div class="divide-line"></div>
+            <!--<div class="divide-line"></div>-->
 
 
         </div>
@@ -72,26 +72,26 @@
     }
 </script>
 
-<style scoped="scoped">
-    .divide-line{
-        /*border-bottom: 1px solid #eee;*/
-        /*padding-top: 15px;*/
-        border: 0;
-        height: 0;
-        border-top: 1px solid #eee;
-        margin: 15px 0;
-    }
+<style scoped="scoped" lang="less">
+    /*.divide-line{*/
+        /*border: 0;*/
+        /*height: 0;*/
+        /*border-top: 1px solid #eee;*/
+        /*margin: 15px 0;*/
+    /*}*/
     .fx-pan{
-        padding: 10px;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        margin: 0 10px;
+        &:last-child{
+            border-bottom: none;
+        }
     }
     .score{
         font-size: 12px;
     }
     .fr{
         text-align: right;
-    }
-    .pdr10{
-        /*padding-right: 10px;*/
     }
     .house-title{
         font-size: 14px;
