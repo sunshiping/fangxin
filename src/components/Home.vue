@@ -26,6 +26,7 @@
            <span class="recommend-title">推荐房源</span>
         </div>
         <panel-comp :list="list"></panel-comp>
+        <divider>我是有底线的</divider>
 
 
 
@@ -34,7 +35,7 @@
 </template>
 
 <script>
-  import { Search, Grid, GridItem } from 'vux'
+  import { Search, Grid, GridItem, Divider } from 'vux'
   import City from 'vue-city'
   import PanelComp from './Common/PanelComp.vue'
 
@@ -44,7 +45,8 @@
       City,
       Grid,
       GridItem,
-      PanelComp
+      PanelComp,
+      Divider
     },
     data () {
       return {
@@ -535,7 +537,7 @@
     .arrow-icon{
         position: relative;
         left: 5px;
-        top: 6px;
+        top: 7px;
 
     }
     .arrow-icon:after {
@@ -554,6 +556,7 @@
         width: 20%;
         padding: 5px 0;
         text-align: center;
+        font-size: 14px;
     }
     .search-input{
         width: 73%;
@@ -563,7 +566,7 @@
             border-bottom: 1px solid #d9d9d9;
             padding: 5px;
             width: 100%;
-            font-size: 12px;
+            font-size: 14px;
             background: none;
         }
     }
@@ -598,4 +601,5 @@
         -webkit-transform: scaleX(0.5);
         transform: scaleX(0.5);
     }
+
 </style>

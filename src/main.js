@@ -5,7 +5,11 @@ import App from './App'
 import IndexRoutes from './router/Index'
 import { LoadingPlugin } from 'vux'
 import BaiduMap from 'vue-baidu-map'
+import axios from 'axios'
 
+Vue.prototype.$axios = axios
+
+// Vue.use(axios)
 Vue.use(LoadingPlugin)
 Vue.use(VueRouter)
 Vue.use(BaiduMap, {
