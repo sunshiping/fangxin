@@ -1,6 +1,6 @@
 // import SourceList from '../../components/Source/SourceList.vue'
 import SourceTest from '../../components/Source/SourceTest.vue'
-import Test from '../../components/Map/Map.vue'
+import Test from '../../components/Test.vue'
 import MapTest from '../../components/Comment/MapComp.vue'
 // import SellStep1 from '../../components/Source/Sell/Step1.vue'
 // import SellStep2 from '../../components/Source/Sell/Step2.vue'

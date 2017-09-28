@@ -3,21 +3,21 @@
         <swiper :list="imgList" v-model="demo_index" @on-index-change="demo01_onIndexChange" class="fx-swiper"></swiper>
         <div class="house-desc">
             <flexbox :gutter="0">
-                <flexbox-item>
+                <flexbox-item :span="2/5">
                     <div class="stars font-lf">
                         <rater-comp v-model="stars" slot="value" active-color="#04BE02" :font-size="15" disabled>
-                            <span class="score" slot="score" >4.9</span>
+                            <span class="score ft14" slot="score" >4.9</span>
                         </rater-comp>
                         <div>房源评价 5人</div>
                     </div>
                 </flexbox-item>
-                <flexbox-item>
+                <flexbox-item :span="1/5">
                     <div class="see font-cen">
-                        <div>带看</div>
+                        <div class="ft14">带看</div>
                         <div>130次</div>
                     </div>
                 </flexbox-item>
-                <flexbox-item>
+                <flexbox-item :span="2/5">
                     <div class="price font-rg">
                         <div><span class="money">4500 </span> 元/月</div>
                         <div>45平方</div>
@@ -32,8 +32,8 @@
                 <flexbox :gutter="0" wrap="wrap" :class="{ isFold: isFold }">
                     <flexbox-item :span="1/2" v-for="item in houseInfo" :key="item.label">
                         <div class="info-item">
-                            <label>{{ item.label }}</label>
-                            <span>{{ item.info }}</span>
+                            <label class="item-label">{{ item.label }}：</label>
+                            <span class="item-span">{{ item.info }}</span>
                         </div>
                     </flexbox-item>
                 </flexbox>
@@ -60,20 +60,34 @@
                 <div class="btns">
                     <flexbox :gutter="0">
                         <flexbox-item :span="1/5">
-                            <div class="collection">
-                                收藏
+                            <div class="collection" @click="collection" >
+                                <span :class="{ isCollection: isCollection }">收藏</span>
                             </div>
                         </flexbox-item>
                         <flexbox-item :span="2/5">
-                            <div class="btn">预约看房</div>
+                            <div class="btn" @click="order">预约看房</div>
                         </flexbox-item>
                         <flexbox-item :span="2/5">
-                            <div class="btn">联系经纪人</div>
+                            <div class="btn" @click="contract">联系经纪人</div>
                         </flexbox-item>
                     </flexbox>
                 </div>
 
             </div>
+
+            <!--点击预约看房弹框-->
+            <!--<div v-transfer-dom>-->
+                <alert
+                        v-model="show"
+                        title="预约成功"
+                        content="请保持手机畅通，稍后会有经纪人与您联系，谢谢。"
+                        button-text="知道了"
+                ></alert>
+            <!--</div>-->
+
+
+
+
         </div>
 
 
@@ -82,7 +96,7 @@
 </template>
 
 <script>
-  import { Swiper, Flexbox, FlexboxItem } from 'vux'
+  import { Swiper, Flexbox, FlexboxItem, Alert } from 'vux'
   import RaterComp from '../Common/RaterComp.vue'
   import BaiduMap from '../Comment/MapComp.vue'
   import Col2Comp from '../Common/Col2Comp.vue'
@@ -95,22 +109,23 @@
       FlexboxItem,
       RaterComp,
       BaiduMap,
-      Col2Comp
+      Col2Comp,
+      Alert
     },
     data () {
       return {
         imgList: [{
           url: 'javascript:',
-          img: 'https://static.vux.li/demo/1.jpg',
-          title: '送你一朵fua'
+          img: '../../../static/images/1.png',
+          title: '0'
         }, {
           url: 'javascript:',
-          img: 'https://static.vux.li/demo/2.jpg',
-          title: '送你一辆车'
+          img: '../../../static/images/2.png',
+          title: '1'
         }, {
           url: 'javascript:',
-          img: 'https://static.vux.li/demo/3.jpg',
-          title: '送你一次旅行'
+          img: '../../../static/images/3.png',
+          title: '2'
         }],
         demo_index: 1,
         stars: 4.9,
@@ -146,40 +161,62 @@
           {
             label: '装修',
             info: '精装修'
+          },
+          {
+            label: '朝向',
+            info: '南北通透'
+          },
+          {
+            label: '楼型',
+            info: '小高层'
+          },
+          {
+            label: '楼层',
+            info: '顶层/18层'
+          },
+          {
+            label: '装修',
+            info: '精装修'
           }
         ],
         isFold: true,
-        position: '九龙城-龙腾西城',
+        position: '3',
         list: [
           {
-            src: '../../static/images/logo.png',
+            id: 1000010,
+            src: '../../static/images/pic.png',
             name: '蔷薇花园 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/images/logo.png',
+            id: 1000012,
+            src: '../../static/images/pic.png',
             name: '蔷薇花园1 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/images/logo.png',
+            id: 1000013,
+            src: '../../static/images/pic.png',
             name: '蔷薇花园2 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           },
           {
-            src: '../../static/images/logo.png',
+            id: 1000014,
+            src: '../../static/images/pic.png',
             name: '蔷薇花园3 3室2厅 112㎡',
             price: '240',
             unitPrice: '15000',
             measure: '112㎡'
           }
-        ]
+        ],
+        show: false,
+        isCollection: false
       }
     },
     created () {
@@ -192,6 +229,16 @@
       fold () {
         console.log('----------------->展开')
         this.isFold = !this.isFold
+      },
+      collection () {
+        console.log(this.isCollection)
+        this.isCollection = !this.isCollection
+      },
+      order () {
+        this.show = true
+      },
+      contract () {
+        console.log('联系经纪人')
       }
     }
   }
@@ -199,6 +246,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+    .isCollection{
+        color: rgb(4, 190, 2);
+    }
+    .ft14{
+        font-size: 14px;
+    }
     .divide-line{
         /*border-bottom: 1px solid #eee;*/
         /*padding-top: 15px;*/
@@ -226,7 +279,7 @@
         text-align: center;
     }
     .house-desc{
-        padding: 5px;
+        padding: 5px 10px;
     }
     .info{
         background-color: #fff;
@@ -236,12 +289,19 @@
         padding: 5px 10px;
     }
     .info-item{
-        label{
-            font-size: 12px;
+        padding: 2px 0;
+        .item-label{
+            width: 30%;
+            text-align: right;
+            display: inline-block;
+            font-size: 14px;
             color: #999;
         }
-        span{
-            font-size: 12px;
+        .item-span{
+            width: 66%;
+            display: inline-block;
+            text-align: left;
+            font-size: 14px;
             color: #333;
         }
     }
@@ -278,7 +338,7 @@
         -webkit-transform: rotate(-43deg);
     }
     .isFold{
-        height:40px;
+        height:106px;
         overflow: hidden;
     }
     .position{
@@ -319,14 +379,6 @@
             width: 93%;
             margin: 0 auto;
             border-radius: 5px;
-        }
-    }
-    .fx-swiper{
-        .vux-swiper-item{
-            width: 90% !important;
-            border-radius: 10px !important;
-            overflow: hidden !important;
-            margin: 0px auto 0px 20px !important;
         }
     }
     .recommend-title{
