@@ -4,7 +4,7 @@
         <p class="title">您期望的面积及价位？</p>
         <div>
             <group label-width="5em">
-                <x-input class="require-icon" title="面积" placeholder="平米" ref="input01" required>
+                <x-input class="require-icon" type="number" title="面积" placeholder="平米" ref="input01" required>
                 </x-input>
                 <div class="vux-x-input weui-cell require-icon">
                     <div class="weui-cell__hd">
@@ -55,7 +55,7 @@
       link () {
         if (this.$refs.input01.valid === true && this.val1 !== '' && this.val2 !== '' && this.value1.length !== 0) {
           this.$router.push({
-            path: '/buyother'
+            path: '/saleother'
           })
         } else {
           alert('请把信息填写完整！')

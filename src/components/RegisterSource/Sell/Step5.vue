@@ -1,7 +1,7 @@
 <template>
     <div class="personal rent-content">
         <x-header></x-header>
-        <group title="您的个人信息?">
+        <group title="您的个人信息？">
             <x-input
                     title="手机号"
                     name="mobile"
@@ -28,8 +28,9 @@
 
             </x-input>
             <x-input title="联系人" name="username" placeholder="请输入业主姓名" is-type="china-name" v-model="info.contactName"></x-input>
-            <x-input title="标 题" placeholder="请输入您的展示标题" v-model="info.showTitle" ></x-input>
+            <x-input title="标 题" class="prompt-title" :max="max" placeholder="请输入您的展示标题" @on-change="change" v-model="info.showTitle" ></x-input>
         </group>
+        <p class="prompt">还可以输入{{count}}字</p>
         <p class="tip">注：您的标题将作为列表页面的展示内容</p>
 
         <!--<p class="check"><input v-model="isChecked" type="checkbox" value=true>我已阅读并且同意<a href="#">《房屋委托协议》</a></p>-->
@@ -85,6 +86,7 @@
           showTitle: '',
           code: ''
         },
+        max: 12,
         isGreen: false,
         time2: 5,
         start: false,
@@ -92,6 +94,15 @@
         showCode: true,
         showCountdown: false,
         valid1: false
+      }
+    },
+    computed: {
+      count () {
+        let len = 0
+        if (this.info.showTitle) {
+          len = this.max - this.info.showTitle.replace(/\n/g, 'aa').length
+        }
+        return len
       }
     },
     methods: {
