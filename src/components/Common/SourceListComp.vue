@@ -29,7 +29,7 @@
       },
       data () {
         return {
-          viewHeight: '-50'
+          viewHeight: '-100'
         }
       }
     }

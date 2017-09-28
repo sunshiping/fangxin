@@ -4,10 +4,11 @@
         <p class="title">您期望的面积及期望售价？</p>
         <div>
             <group label-width="5em" >
-                <x-input class="require-icon" title="面积"  required ></x-input>
-                <x-input class="require-icon" title="售价"  required ></x-input>
+                <x-input type="number" class="require-icon" title="面积"  required ></x-input>
+                <x-input type="number" class="require-icon" title="售价"  required ></x-input>
 
                 <x-input
+                        type="number"
                         title="手机号"
                         name="mobile"
                         keyboard="number"

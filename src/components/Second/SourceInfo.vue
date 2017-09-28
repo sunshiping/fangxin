@@ -61,7 +61,7 @@
                     <flexbox :gutter="0">
                         <flexbox-item :span="1/5">
                             <div class="collection" @click="collection" >
-                                <span :class="{ isCollection: isCollection }">收藏</span>
+                                <span :class="{ isCollection: isCollection }" class="fa fa-star"></span>
                             </div>
                         </flexbox-item>
                         <flexbox-item :span="2/5">
@@ -246,8 +246,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+    .collection .fa-star{
+        font-size: 24px;
+        padding-top: 8px;
+    }
     .isCollection{
-        color: rgb(4, 190, 2);
+        color: rgb(255, 153, 0);
     }
     .ft14{
         font-size: 14px;
