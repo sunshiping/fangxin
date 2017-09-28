@@ -1,18 +1,24 @@
 <template>
     <div>
-        <source-list-comp :list="list">
-            <div slot="house-type" class="house-type">推荐优质二手房</div>
-        </source-list-comp>
+        <header-comp></header-comp>
+
+        <div class="list">
+            <source-list-comp :list="list">
+                <div slot="house-type" class="house-type">推荐优质二手房</div>
+            </source-list-comp>
+        </div>
+
     </div>
 </template>
 
 <script>
   import SourceListComp from '../Common/SourceListComp.vue'
+  import HeaderComp from '../Common/HeaderComp.vue'
 
   export default {
-    name: 'hello',
     components: {
-      SourceListComp
+      SourceListComp,
+      HeaderComp
     },
     data () {
       return {
@@ -91,6 +97,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .list{
+        padding-top: 50px;
+    }
     .house-type{
         padding: 15px 0 0 10px;
         color: #9d9d9d;
