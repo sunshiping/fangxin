@@ -1,2 +1,5 @@
 build/*.js
 config/*.js
+src/components/index.js
+static/js/TextIconOverlay.js
+src/components/MapComp/*.js

@@ -1,24 +1,27 @@
 <template>
     <div>
         <h1>{{ msg }}</h1>
+        <img src=""/>
     </div>
 </template>
 
 <script>
-//  import Maplib from './MapComp/maplib'
-//  import TextIconOverlay from './MapComp/textIconOverlay'
   export default {
-    components: {
-//      Maplib,
-//      TextIconOverlay
-    },
+    name: 'hello',
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     },
-    mounted () {
-//      console.log(TextIconOverlay)
+    created () {
+      console.log(this.$axios)
+      this.$axios.get('../../static/data.json')
+        .then(function (res) {
+          console.log(res)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     }
   }
 </script>
