@@ -7,32 +7,6 @@ import { LoadingPlugin } from 'vux'
 import BaiduMap from 'vue-baidu-map'
 import axios from 'axios'
 
-import AMap from 'vue-amap'
-import { lazyAMapApiLoaderInstance } from 'vue-amap'
-
-// 高德地图
-Vue.use(AMap)
-AMap.initAMapApiLoader({
-  key: '9cd18b1302a652d9da36e189f09104ae',
-  plugin: [
-    'AMap.Autocomplete',
-    'AMap.PlaceSearch',
-    'AMap.Scale',
-    'AMap.OverView',
-    'AMap.ToolBar',
-    'AMap.MapType',
-    'AMap.PolyEditor',
-    'AMap.CircleEditor'
-  ]
-})
-
-lazyAMapApiLoaderInstance.load().then(() => {
-  // your code ...
-  this.map = new AMap.Map('amapContainer', {
-    center: new AMap.LngLat(121.59996, 31.197646)
-  })
-})
-
 Vue.prototype.$axios = axios
 
 // Vue.use(axios)
